@@ -31,9 +31,6 @@ img {
     height: auto;
     display: block;
 }
-
-/* TOP HEADER */
-
 .header-sec {
     width: 100%;
     min-height: 45px;
@@ -72,6 +69,7 @@ img {
 .section-3 img {
     width: 17px;
     height: 17px;
+    object-fit: contain;
     filter: brightness(0) invert(1);
     cursor: pointer;
     transition: 0.3s;
@@ -80,9 +78,6 @@ img {
 .section-3 img:hover {
     transform: scale(1.2);
 }
-
-/* MAIN NAVBAR */
-
 .headercol-sec {
     width: 100%;
     height: 90px;
@@ -118,8 +113,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+list-style: none;
     gap: 4px;
-    list-style: none;
 }
 
 .header-text > a,
@@ -137,9 +132,6 @@ img {
 .dropdown > a:hover {
     color: #c9a227;
 }
-
-/* DROPDOWN */
-
 .dropdown {
     position: relative;
 }
@@ -173,9 +165,6 @@ img {
     background-color: #c9a227;
     color: #fff;
 }
-
-/* NAVBAR ICONS */
-
 .sectioncol-3 {
     width: 20%;
     display: flex;
@@ -187,6 +176,7 @@ img {
 .sectioncol-3 img {
     width: 19px;
     height: 19px;
+    object-fit: contain;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -196,26 +186,13 @@ img {
 }
 
 .menu {
-    display: none;
+    
 }
 
-/* MAIN */
 
 .main-content {
     width: 100%;
 }
-
-/* CAROUSEL */
-
-.carousel {
-    width: 100%;
-    overflow: hidden;
-}
-
-
-
-/* COLLECTION HEADING */
-
 .cat-h1 {
     text-align: center;
     text-transform: uppercase;
@@ -224,9 +201,6 @@ img {
     font-weight: 500;
     letter-spacing: 1px;
 }
-
-/* CATEGORIES */
-
 .categories {
     width: 100%;
     max-width: 1250px;
@@ -290,13 +264,6 @@ img {
     font-size: 16px;
     font-weight: 500;
 }
-
-/* WATCH PRODUCTS */
-
-/* =========================
-   WATCH COLLECTION
-========================= */
-
 .watch-collection {
     width: 90%;
     max-width: 1250px;
@@ -318,18 +285,11 @@ img {
     margin-bottom: 40px;
 }
 
-
-/* WATCH CONTAINER */
-
 .watch-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
-
-
-/* WATCH BOX */
-
 .watch-box {
     background: #fff;
     border: 1px solid #e5e5e5;
@@ -343,10 +303,6 @@ img {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
-
-
-/* IMAGE */
-
 .watch-image {
     width: 100%;
     height: 270px;
@@ -368,10 +324,6 @@ img {
 .watch-box:hover .watch-image img {
     transform: scale(1.08);
 }
-
-
-/* WATCH INFO */
-
 .watch-info {
     padding: 20px;
     text-align: left;
@@ -380,7 +332,7 @@ img {
 .watch-info h2 {
     font-size: 19px;
     color: #111;
-    margin: 0 0 7px;
+    margin-bottom: 7px;
 }
 
 .watch-category {
@@ -402,13 +354,8 @@ img {
     color: #111;
     margin: 15px 0;
 }
-
-
-/* BUTTON */
-
 .watch-btn {
     display: inline-block;
-    text-decoration: none;
     background: #111;
     color: #fff;
     padding: 11px 18px;
@@ -449,18 +396,16 @@ img {
 .butn span img {
     width: 20px;
     height: 20px;
-    display: block;
 }
 
 .butn:hover {
-    background-color: #333;
+    background-color: #c9a227;
     transform: translateY(-2px);
 }
 
 .butn:active {
     transform: translateY(0);
 }
-/* BADGES */
 
 .badge-container {
     width: 100%;
@@ -507,8 +452,6 @@ img {
     color: #666;
     line-height: 1.4;
 }
-
-/* FOOTER */
 
 footer {
     width: 100%;
@@ -566,28 +509,299 @@ footer {
     font-weight: 600;
 }
 
-/* LARGE TABLET */
+.banner img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
 
-@media (max-width: 1100px) {
+.form-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-container h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.required {
+    color: #b30000;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #111;
+    font-size: 14px;
+    color: #444;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-container input:focus {
+    border-color: #c9a227;
+}
+
+.form-container input::placeholder {
+    color: #757065;
+}
+
+.form-container button {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 11px 24px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #c9a227;
+}
+
+.contact-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #666;
+    font-size: 15px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    padding: 40px;
+}
+
+.contact-info-card {
+    background-color: #f9f9f9;
+}
+
+.card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.info-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    width: 24px;
+    min-width: 24px;
+    margin-right: 15px;
+    margin-top: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-text h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info-text p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-control:focus {
+    border-color: #c9a227;
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #c9a227;
+}
+
+@media (max-width: 1200px) {
+
+    .headercol-sec {
+        padding: 15px 30px;
+    }
 
     .header-text {
-        gap: 0;
+        gap: 8px;
     }
 
     .header-text > a,
     .dropdown > a {
+        font-size: 12px;
         padding-left: 7px;
         padding-right: 7px;
-        font-size: 12px;
+    }
+
+    .watch-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .categories {
+        gap: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .badge-container {
+        padding: 35px 30px;
+    }
+
+    footer {
+        padding: 50px 30px;
+    }
+
+    .contact-container {
+        max-width: 1000px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    body {
+        padding-top: 120px;
+    }
+
+    .header-sec {
+        min-height: 40px;
+    }
+
+    .section-1 {
+        width: 50%;
+    }
+
+    .section-2 {
+        width: 50%;
+    }
+
+    .section-3 {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .headercol-sec {
+        top: 40px;
+        height: 80px;
+        padding: 10px 20px;
+    }
+
+    .sectioncol-1 {
+        width: 30%;
+        justify-content: flex-start;
+    }
+
+    .sectioncol-1 img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .sectioncol-2 {
+        display: none;
+    }
+
+    .sectioncol-3 {
+        width: 70%;
+        justify-content: flex-end;
+    }
+
+    .sectioncol-3 .menu {
+        display: block;
+    }
+
+    .watch-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
     .categories {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .contanier {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 800px;
+        gap: 25px;
     }
 
     .badge-container {
@@ -597,182 +811,218 @@ footer {
     footer {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* TABLET */
-
-@media (max-width: 850px) {
+@media (max-width: 768px) {
 
     body {
         padding-top: 115px;
     }
 
     .header-sec {
-        min-height: 40px;
+        min-height: 35px;
+        flex-wrap: nowrap;
     }
 
     .section-1 {
-        width: 35%;
+        width: 50%;
         font-size: 11px;
+        padding: 8px 4px;
     }
 
     .section-2 {
-        width: 45%;
+        width: 50%;
         font-size: 10px;
+        padding: 8px 4px;
+        text-align: center;
     }
 
     .section-3 {
-        width: 20%;
-        gap: 10px;
-    }
-
-    .section-3 img {
-        width: 15px;
-        height: 15px;
-    }
-
-    .headercol-sec {
-        top: 40px;
-        height: 75px;
-    }
-
-    .sectioncol-1 {
-        width: 25%;
-    }
-
-    .sectioncol-1 img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .sectioncol-2 {
-        width: 55%;
-    }
-
-    .header-text > a,
-    .dropdown > a {
-        padding: 27px 5px;
-        font-size: 10px;
-    }
-
-    .dropdown-menu {
-        top: 75px;
-        width: 180px;
-    }
-
-    .sectioncol-3 {
-        width: 20%;
-        gap: 12px;
-    }
-
-    .sectioncol-3 img {
-        width: 17px;
-        height: 17px;
-    }
-
-    .cat-h1 {
-        font-size: 25px;
-    }
-
-    .categories {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .categ-box1 {
-        width: 160px;
-        height: 160px;
-    }
-
-    footer {
-        padding: 40px 5%;
-    }
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    body {
-        padding-top: 95px;
-    }
-
-    .header-sec {
-        min-height: 38px;
-    }
-
-    .section-1 {
-        width: 60%;
-        text-align: left;
-        padding-left: 15px;
-        font-size: 10px;
-    }
-
-    .section-2 {
         display: none;
     }
 
-    .section-3 {
-        width: 40%;
-        justify-content: flex-end;
-        padding-right: 15px;
-        gap: 12px;
-    }
-
-    .section-3 img {
-        width: 14px;
-        height: 14px;
-    }
-
     .headercol-sec {
-        top: 38px;
-        height: 57px;
-        padding: 0 12px;
+        top: 35px;
+        height: 80px;
+        padding: 8px 15px;
     }
 
     .sectioncol-1 {
-        width: 55%;
-        justify-content: flex-start;
+        width: 50%;
     }
 
     .sectioncol-1 img {
-        width: 48px;
-        height: 48px;
-    }
-
-    .sectioncol-2 {
-        display: none;
+        width: 65px;
+        height: 65px;
     }
 
     .sectioncol-3 {
-        width: 45%;
-        justify-content: flex-end;
+        width: 50%;
         gap: 15px;
     }
 
     .sectioncol-3 img {
-        width: 17px;
-        height: 17px;
+        width: 20px;
+        height: 20px;
     }
 
-    .menu {
-        display: block;
+    .sectioncol-3 .menu {
+        width: 25px;
+        height: 25px;
     }
 
-    .carousel-item img {
-        min-height: 180px;
-        object-fit: cover;
+    .banner img {
+        height: 350px;
     }
 
     .cat-h1 {
-        font-size: 21px;
-        margin-top: 35px;
-        letter-spacing: 0.5px;
+        font-size: 25px;
+        margin: 35px 0 25px;
     }
 
     .categories {
         grid-template-columns: repeat(2, 1fr);
-        gap: 25px 10px;
-        padding: 30px 10px;
+        gap: 20px;
+        padding: 0 18px;
+    }
+
+    .categ-box1 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .Rolex,
+    .Citizen,
+    .smart,
+    .vintage,
+    .Repair {
+        font-size: 15px;
+        margin-top: 8px;
+    }
+
+    .watch-collection {
+        width: 100%;
+        padding: 30px 18px;
+    }
+
+    .watch-title {
+        font-size: 25px;
+    }
+
+    .watch-subtitle {
+        font-size: 14px;
+    }
+
+    .watch-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .watch-image {
+        height: 220px;
+    }
+
+    .watch-info {
+        padding: 15px;
+    }
+
+    .watch-info h2 {
+        font-size: 18px;
+    }
+
+    .watch-description {
+        font-size: 13px;
+    }
+
+    .watch-price {
+        font-size: 17px;
+    }
+
+    .watch-btn {
+        font-size: 12px;
+        padding: 9px 15px;
+    }
+
+    .badge-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 35px 18px;
+    }
+
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 40px 25px;
+    }
+
+    .contact-container {
+        margin: 30px auto;
+        padding: 0 18px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    body {
+        padding-top: 105px;
+    }
+
+    .header-sec {
+        min-height: 32px;
+    }
+
+    .section-1,
+    .section-2 {
+        font-size: 9px;
+        padding: 7px 2px;
+    }
+
+    .headercol-sec {
+        top: 32px;
+        height: 73px;
+        padding: 8px 12px;
+    }
+
+    .sectioncol-1 img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .sectioncol-3 {
+        gap: 12px;
+    }
+
+    .sectioncol-3 img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .sectioncol-3 .menu {
+        width: 23px;
+        height: 23px;
+    }
+
+    .banner img {
+        height: 220px;
+    }
+
+    .cat-h1 {
+        font-size: 21px;
+        margin: 25px 10px 20px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 12px;
     }
 
     .categ-box1 {
@@ -786,23 +1036,55 @@ footer {
     .vintage,
     .Repair {
         font-size: 13px;
-        margin-top: 10px;
     }
 
-    .contanier {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        padding: 0 12px;
-        margin-bottom: 40px;
+    .watch-collection {
+        padding: 25px 15px;
+        margin: 40px auto;
     }
 
-    .watch-box {
-        min-height: 180px;
-        padding: 8px;
+    .watch-title {
+        font-size: 21px;
     }
 
-    .watch-box img {
-        height: 160px;
+    .watch-subtitle {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+
+    .watch-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .watch-image {
+        height: 280px;
+    }
+
+    .watch-info {
+        padding: 18px;
+    }
+
+    .watch-info h2 {
+        font-size: 19px;
+    }
+
+    .watch-description {
+        font-size: 13px;
+    }
+
+    .watch-price {
+        font-size: 18px;
+    }
+
+    .watch-btn {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+
+    .butn {
+        font-size: 13px;
+        padding: 10px 18px;
     }
 
     .badge-container {
@@ -812,55 +1094,84 @@ footer {
     }
 
     .badge-item {
-        gap: 12px;
+        text-align: left;
+    }
+
+    .icon-wrapper {
+        min-width: 45px;
+        width: 45px;
+        height: 45px;
     }
 
     .badge-text h3 {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .badge-text p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     footer {
         grid-template-columns: 1fr;
+        text-align: center;
         gap: 30px;
-        padding: 40px 25px;
+        padding: 35px 20px;
     }
 
     .footer-sec1 img {
-        width: 80px;
+        width: 90px;
+        margin: 0 auto 10px;
     }
 
     .footer-sp {
         font-size: 18px;
     }
 
-    .footer-p {
-        font-size: 13px;
+    .contact-header h1 {
+        font-size: 24px;
+    }
+
+    .content-grid {
+        gap: 20px;
+    }
+
+    .card {
+        padding: 20px;
     }
 }
 
-/* SMALL MOBILE */
+@media (max-width: 380px) {
 
-@media (max-width: 400px) {
-
-    .section-1 {
-        font-size: 9px;
+    .sectioncol-1 img {
+        width: 52px;
+        height: 52px;
     }
 
     .sectioncol-3 {
-        gap: 11px;
+        gap: 9px;
     }
 
     .sectioncol-3 img {
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .sectioncol-3 .menu {
+        width: 21px;
+        height: 21px;
+    }
+
+    .banner img {
+        height: 190px;
+    }
+
+    .cat-h1 {
+        font-size: 18px;
     }
 
     .categories {
-        gap: 20px 5px;
+        gap: 12px;
+        padding: 0 10px;
     }
 
     .categ-box1 {
@@ -873,18 +1184,30 @@ footer {
     .smart,
     .vintage,
     .Repair {
+        font-size: 11px;
+    }
+
+    .watch-title {
+        font-size: 18px;
+    }
+
+    .watch-image {
+        height: 240px;
+    }
+
+    .watch-info h2 {
+        font-size: 17px;
+    }
+
+    .watch-description {
         font-size: 12px;
     }
 
-    .watch-box {
-        min-height: 150px;
+    .watch-price {
+        font-size: 16px;
     }
 
-    .watch-box img {
-        height: 135px;
-    }
-
-    .cat-h1 {
-        font-size: 18px;
+    footer {
+        padding: 30px 15px;
     }
 }
