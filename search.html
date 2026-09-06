@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search | Alberto Watches</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="Prime_Codder/assets/css/boots.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+
+    <link rel="shortcut icon"
+        href="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png"
+        type="image/x-icon">
+</head>
+
+<body>
+
+<!-- ================= TOP HEADER ================= -->
+
+<div class="header-sec">
+
+    <div class="section-1">
+        <span>Welcome to Alberto Watches</span>
+    </div>
+
+    <div class="section-2">
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            100% AUTHENTIC WATCHES |
+            OVER THOUSANDS OF SATISFIED CUSTOMERS |
+            EXCELLENT AFTER-SALE SERVICE |
+            FOR COMPLAINT & SUGGESTIONS
+        </marquee>
+    </div>
+
+    <div class="section-3">
+
+        <img src="assets/icon/facebook-f-brands-solid-full.svg" alt="Facebook">
+
+        <img src="assets/icon/instagram-brands-solid-full.svg" alt="Instagram">
+
+        <img src="assets/icon/linkedin-brands-solid-full.svg" alt="LinkedIn">
+
+    </div>
+
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<div class="headercol-sec">
+
+    <div class="sectioncol-1">
+
+        <a href="index.html">
+
+            <img
+                src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76.png"
+                alt="Alberto Watches">
+
+        </a>
+
+    </div>
+
+
+    <div class="sectioncol-2">
+
+        <div class="header-text">
+
+            <a href="index.html">HOME</a>
+
+            <li class="dropdown">
+
+                <a href="#">PRODUCTS &nabla;</a>
+
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <a href="rolex.html">Rolex Watches</a>
+                    </li>
+
+                    <li>
+                        <a href="vintage.html">Vintage Watches</a>
+                    </li>
+
+                    <li>
+                        <a href="citizen.html">Citizen Watches</a>
+                    </li>
+
+                    <li>
+                        <a href="smart.html">Smart Watches</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Michael Kors</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Bulova Watches</a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <a href="about.html">ABOUT</a>
+
+            <a href="repair.html">
+                REPAIRS & SERVICING
+            </a>
+
+            <a href="appraisal.html">
+                APPRAISAL
+            </a>
+
+            <a href="#">STORE</a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+            <a href="search.html" class="active">
+                SEARCH
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="sectioncol-3">
+
+        <img
+            src="assets/icon/sistrix-brands-solid-full.svg"
+            alt="Search">
+
+        <img
+            src="assets/icon/user-solid-full.svg"
+            alt="User">
+
+        <img
+            src="assets/icon/bag-shopping-solid-full.svg"
+            alt="Cart">
+
+        <img
+            src="assets/icon/bars-solid-full.svg"
+            class="menu"
+            alt="Menu">
+
+    </div>
+
+</div>
+
+
+<!-- ================= SEARCH HERO ================= -->
+
+<section class="search-hero">
+
+    <div class="search-hero-content">
+
+        <span>ALBERTO WATCHES</span>
+
+        <h1>Search Watches</h1>
+
+        <p>
+            Find your perfect timepiece from our collection.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH SECTION ================= -->
+
+<section class="search-section">
+
+    <div class="search-container">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search watches, brands, models..."
+                autocomplete="off">
+
+            <button id="searchButton">
+
+                <img
+                    src="assets/icon/sistrix-brands-solid-full.svg"
+                    alt="Search">
+
+                SEARCH
+
+            </button>
+
+        </div>
+
+
+        <div class="search-options">
+
+            <button class="filter-btn active" data-category="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-category="rolex">
+                Rolex
+            </button>
+
+            <button class="filter-btn" data-category="citizen">
+                Citizen
+            </button>
+
+            <button class="filter-btn" data-category="vintage">
+                Vintage
+            </button>
+
+            <button class="filter-btn" data-category="smart">
+                Smart Watches
+            </button>
+
+        </div>
+
+
+        <div class="search-result-text">
+
+            <h2>Our Watches</h2>
+
+            <p id="resultCount">
+                Showing all watches
+            </p>
+
+        </div>
+
+
+        <!-- ================= PRODUCTS ================= -->
+
+        <div class="product-grid" id="productGrid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card"
+                 data-name="Rolex Submariner"
+                 data-category="rolex">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/images/rolex.jpg"
+                        alt="Rolex Submariner">
+
+                </div>
+
+                <div class="product-info">
+
+                    <span>ROLEX</span>
+
+                    <h3>Rolex Submariner</h3>
+
+                    <p>Luxury Automatic Watch</p>
+
+                    <strong>Rs. 25,000</strong>
+
+                    <button class="view-btn">
+                        VIEW PRODUCT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card"
+                 data-name="Citizen Eco Drive"
+                 data-category="citizen">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/images/citizen.jpg"
+                        alt="Citizen Eco Drive">
+
+                </div>
+
+                <div class="product-info">
+
+                    <span>CITIZEN</span>
+
+                    <h3>Citizen Eco Drive</h3>
+
+                    <p>Classic Premium Watch</p>
+
+                    <strong>Rs. 18,500</strong>
+
+                    <button class="view-btn">
+                        VIEW PRODUCT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card"
+                 data-name="Vintage Classic Watch"
+                 data-category="vintage">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/images/vintage.jpg"
+                        alt="Vintage Classic Watch">
+
+                </div>
+
+                <div class="product-info">
+
+                    <span>VINTAGE</span>
+
+                    <h3>Vintage Classic Watch</h3>
+
+                    <p>Elegant Vintage Timepiece</p>
+
+                    <strong>Rs. 15,000</strong>
+
+                    <button class="view-btn">
+                        VIEW PRODUCT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card"
+                 data-name="Smart Watch Pro"
+                 data-category="smart">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/images/smart.jpg"
+                        alt="Smart Watch Pro">
+
+                </div>
+
+                <div class="product-info">
+
+                    <span>SMART</span>
+
+                    <h3>Smart Watch Pro</h3>
+
+                    <p>Modern Smart Watch</p>
+
+                    <strong>Rs. 12,500</strong>
+
+                    <button class="view-btn">
+                        VIEW PRODUCT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product-card"
+                 data-name="Rolex Datejust"
+                 data-category="rolex">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/images/rolex2.jpg"
+                        alt="Rolex Datejust">
+
+                </div>
+
+                <div class="product-info">
+
+                    <span>ROLEX</span>
+
+                    <h3>Rolex Datejust</h3>
+
+                    <p>Premium Luxury Watch</p>
+
+                    <strong>Rs. 30,000</strong>
+
+                    <button class="view-btn">
+                        VIEW PRODUCT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="product-card"
+                 data-name="Citizen Automatic"
+                 data-category="citizen">
+
+                <div class="product-image">
+
+                    <img
+                        src="assets/images/citizen2.jpg"
+                        alt="Citizen Automatic">
+
+                </div>
+
+                <div class="product-info">
+
+                    <span>CITIZEN</span>
+
+                    <h3>Citizen Automatic</h3>
+
+                    <p>Automatic Men's Watch</p>
+
+                    <strong>Rs. 20,000</strong>
+
+                    <button class="view-btn">
+                        VIEW PRODUCT
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NO RESULT -->
+
+        <div id="noResult" class="no-result">
+
+            <div>⌚</div>
+
+            <h3>No Watches Found</h3>
+
+            <p>
+                Try searching with another watch name or brand.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<div class="badge-container">
+
+    <div class="badge-item">
+
+        <div class="icon-wrapper">
+
+            <img
+                src="assets/icon/dolly-solid-full.svg"
+                alt="Fast Delivery">
+
+        </div>
+
+        <div class="badge-text">
+
+            <h3>FAST DELIVERY</h3>
+
+            <p>
+                24-hour delivery in Lahore &
+                nationwide shipping across Pakistan
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="badge-item">
+
+        <div class="icon-wrapper">
+
+            <img
+                src="assets/icon/shield-halved-solid-full.svg"
+                alt="Authentic">
+
+        </div>
+
+        <div class="badge-text">
+
+            <h3>100% AUTHENTIC</h3>
+
+            <p>
+                Genuine branded watches with
+                official warranty
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="badge-item">
+
+        <div class="icon-wrapper">
+
+            <img
+                src="assets/icon/headphones-regular-full.svg"
+                alt="Support">
+
+        </div>
+
+        <div class="badge-text">
+
+            <h3>24/7 SUPPORT</h3>
+
+            <p>
+                Dedicated customer support
+                via call & WhatsApp
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="badge-item">
+
+        <div class="icon-wrapper">
+
+            <img
+                src="assets/icon/gift-solid-full.svg"
+                alt="Secure Payments">
+
+        </div>
+
+        <div class="badge-text">
+
+            <h3>SECURE PAYMENTS</h3>
+
+            <p>
+                Cash on delivery & secure
+                online payment options
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-sec1">
+
+        <img
+            src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png"
+            alt="Alberto Watches">
+
+        <span class="footer-sp">
+            Alberto Watches
+        </span>
+
+        <p class="footer-p">
+            Your Home of Affordable Premium
+            <br>
+            Quality Watches that Never Go
+            <br>
+            Out of Style.
+        </p>
+
+    </div>
+
+
+    <div class="information">
+
+        <h3>Information</h3>
+
+        <a href="index.html">Home</a>
+        <br>
+
+        <a href="about.html">About Us</a>
+        <br>
+
+        <a href="repair.html">
+            Repairs & Servicing
+        </a>
+        <br>
+
+        <a href="contact.html">
+            Contact Us
+        </a>
+        <br>
+
+        <a href="#">Store</a>
+
+    </div>
+
+
+    <div class="Quick-link">
+
+        <h3 class="Quick">
+            Quick Links
+        </h3>
+
+        <a href="#">Track Your Order</a>
+        <br>
+
+        <a href="#">Watch Brand</a>
+        <br>
+
+        <a href="#">Affiliate Program</a>
+        <br>
+
+        <a href="#">Refund Policy</a>
+        <br>
+
+        <a href="#">Payment Method</a>
+        <br>
+
+        <a href="#">Store Directory</a>
+
+    </div>
+
+
+    <div class="Secure">
+
+        <h3 class="secure">
+            Secure Payments
+        </h3>
+
+        <p class="pra">
+            Alberto Watches
+            <br>
+            Online Luxury Watches
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/boots.js"></script>
+<script src="assets/js/search.js"></script>
+
+</body>
+</html>

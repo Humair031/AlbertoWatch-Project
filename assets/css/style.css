@@ -1,3 +1,7 @@
+/* =====================================================
+   style.css
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,9 +15,8 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #111;
-    background-color: #fff;
+    background: #fff;
     line-height: 1.5;
-    padding-top: 135px;
     overflow-x: hidden;
 }
 
@@ -22,21 +25,27 @@ a {
     color: inherit;
 }
 
-ul {
-    list-style: none;
-}
-
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   TOP HEADER
+===================================================== */
+
 .header-sec {
     width: 100%;
     min-height: 45px;
     display: flex;
     align-items: center;
-    background-color: #000;
+    background: #000;
     color: #fff;
     position: fixed;
     top: 0;
@@ -46,7 +55,7 @@ img {
 
 .section-1 {
     width: 25%;
-    padding: 10px;
+    padding: 10px 15px;
     text-align: center;
     font-size: 13px;
 }
@@ -56,13 +65,14 @@ img {
     padding: 10px;
     font-size: 12px;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .section-3 {
     width: 25%;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 15px;
 }
 
@@ -71,19 +81,26 @@ img {
     height: 17px;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .section-3 img:hover {
     transform: scale(1.2);
+    opacity: 0.7;
 }
-.headercol-sec {
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
     width: 100%;
-    height: 90px;
+
+    background: #fff;
     display: flex;
     align-items: center;
-    background-color: #fff;
+    justify-content: space-between;
     border-bottom: 1px solid #ddd;
     position: fixed;
     top: 45px;
@@ -91,148 +108,232 @@ img {
     z-index: 9999;
 }
 
-.sectioncol-1 {
-    width: 20%;
+.nav-logo {
+    flex-shrink: 0;
+}
+
+.nav-logo img {
+    width: 120px;
+    height: auto;
+}
+
+
+/* =====================================================
+   DESKTOP NAV
+===================================================== */
+
+.desktop-nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 
-.sectioncol-1 img {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-}
-
-.sectioncol-2 {
-    width: 60%;
-}
-
-.header-text {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-list-style: none;
-    gap: 4px;
-}
-
-.header-text > a,
-.dropdown > a {
-    display: block;
-    padding: 35px 10px;
+.desktop-nav > a,
+.dropdown-btn {
     color: #111;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
-    white-space: nowrap;
-    transition: 0.3s;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
 }
 
-.header-text > a:hover,
-.dropdown > a:hover {
+.desktop-nav > a:hover,
+.dropdown-btn:hover {
     color: #c9a227;
 }
-.dropdown {
+
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.nav-dropdown {
     position: relative;
+}
+
+.dropdown-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-btn span {
+    transition: 0.3s ease;
+}
+
+.nav-dropdown.open .dropdown-btn span {
+    transform: rotate(180deg);
 }
 
 .dropdown-menu {
     position: absolute;
-    top: 90px;
+    top: calc(100% + 20px);
     left: 0;
-    width: 200px;
+    width: 210px;
     padding: 8px 0;
-    background-color: #fff;
-    border: 1px solid #c9a227;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-    display: none;
-    z-index: 10001;
+    background: white;
+    border: 1px solid #333;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: 0.3s ease;
 }
 
-.dropdown:hover .dropdown-menu {
-    display: block;
+.nav-dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-.dropdown-menu li a {
+.dropdown-menu a {
     display: block;
-    padding: 11px 16px;
-    color: #000;
-    font-size: 14px;
+    padding: 12px 16px;
+    color: black;
+    font-size: 13px;
     transition: 0.3s;
 }
 
-.dropdown-menu li a:hover {
-    background-color: #c9a227;
-    color: #fff;
+.dropdown-menu a:hover {
+    background: white;
+    color: black;
 }
-.sectioncol-3 {
-    width: 20%;
+
+
+/* =====================================================
+   NAV ICONS
+===================================================== */
+
+.nav-icons {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 18px;
 }
 
-.sectioncol-3 img {
+.nav-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icons a img,
+.menu-btn img {
     width: 19px;
     height: 19px;
     object-fit: contain;
+
+    /* Black icons on white navbar */
+    filter: brightness(0);
+
+    transition: 0.3s ease;
+}
+
+.nav-icons a:hover img {
+    transform: scale(1.15);
+}
+
+.menu-btn {
+    display: none;
+
+    background: transparent;
+    border: none;
+    padding: 5px;
+
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.sectioncol-3 img:hover {
-    transform: scale(1.2);
-}
 
-.menu {
-    
-}
-
+/* =====================================================
+   MAIN
+===================================================== */
 
 .main-content {
     width: 100%;
+        margin-top: -85px;
+    padding-top: 130px;
 }
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-slider .carousel-item img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
 .cat-h1 {
     text-align: center;
     text-transform: uppercase;
-    margin: 50px 15px 0;
+
+    margin: 55px 15px 0;
+
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
 }
+
 .categories {
     width: 100%;
     max-width: 1250px;
+
     margin: 0 auto;
     padding: 45px 20px;
+
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
+
     justify-items: center;
 }
 
 .categories > a {
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     text-align: center;
 }
 
 .categ-box1 {
     width: 170px;
     height: 170px;
+
     padding: 5px;
+
     border: 2px solid #e5e5e5;
     border-radius: 50%;
-    background-color: #fff;
+
+    background: #fff;
+
     overflow: hidden;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
     transition: 0.4s ease;
 }
 
@@ -245,125 +346,209 @@ list-style: none;
 .categ-box1 img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
     border-radius: 50%;
-    transition: 0.5s;
+
+    transition: 0.5s ease;
 }
 
 .categ-box1:hover img {
     transform: scale(1.08);
 }
 
-.Rolex,
-.Citizen,
-.smart,
-.vintage,
-.Repair {
-    margin: 15px 0 0;
+.categories > a > span {
+    margin-top: 15px;
+
     color: #000;
     font-size: 16px;
     font-weight: 500;
+
+    transition: 0.3s;
 }
+
+.categories > a:hover > span {
+    color: #c9a227;
+}
+
+
+/* =====================================================
+   WATCH COLLECTION
+===================================================== */
+
 .watch-collection {
     width: 90%;
     max-width: 1250px;
+
     margin: 70px auto;
+
     text-align: center;
 }
 
 .watch-title {
     font-size: 35px;
     font-weight: 700;
+
     letter-spacing: 2px;
+
     color: #111;
+
     margin-bottom: 8px;
+}
+
+.collection-heading {
+    margin: 20px 0 10px;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
 }
 
 .watch-subtitle {
     color: #777;
+
     font-size: 16px;
+
     margin-bottom: 40px;
 }
+
+
+/* =====================================================
+   WATCH GRID
+===================================================== */
 
 .watch-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
+
 .watch-box {
     background: #fff;
+
     border: 1px solid #e5e5e5;
     border-radius: 10px;
+
     overflow: hidden;
+
     transition: 0.4s ease;
+
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
 }
 
 .watch-box:hover {
     transform: translateY(-8px);
+
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
+
+
+/* =====================================================
+   WATCH IMAGE
+===================================================== */
+
 .watch-image {
     width: 100%;
     height: 270px;
+
     background: #f7f7f7;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
 }
 
 .watch-image img {
     width: 100%;
     height: 100%;
+
     object-fit: contain;
+
     padding: 15px;
+
     transition: 0.4s ease;
 }
 
 .watch-box:hover .watch-image img {
     transform: scale(1.08);
 }
+
+
+/* =====================================================
+   WATCH INFO
+===================================================== */
+
 .watch-info {
     padding: 20px;
+
     text-align: left;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .watch-info h2 {
     font-size: 19px;
+
     color: #111;
+
     margin-bottom: 7px;
 }
 
 .watch-category {
     font-size: 13px;
+
     color: #888;
+
     margin-bottom: 10px;
 }
 
 .watch-description {
     font-size: 13px;
+
     line-height: 1.6;
+
     color: #666;
+
     min-height: 62px;
 }
 
 .watch-price {
     font-size: 18px;
+
     font-weight: bold;
+
     color: #111;
+
     margin: 15px 0;
 }
+
 .watch-btn {
     display: inline-block;
+
+    width: fit-content;
+
     background: #111;
     color: #fff;
+
     padding: 11px 18px;
+
     border-radius: 4px;
+
     font-size: 12px;
     font-weight: 600;
+
     letter-spacing: 1px;
-    transition: 0.3s;
+
+    transition: 0.3s ease;
 }
 
 .watch-btn:hover {
@@ -371,21 +556,39 @@ list-style: none;
     color: #fff;
 }
 
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.view-link {
+    display: inline-block;
+}
+
 .butn {
-    background-color: #111;
+    background: #111;
     color: #fff;
+
     border: none;
+
     padding: 12px 22px;
+
     font-size: 14px;
     font-weight: 600;
+
     letter-spacing: 1px;
+
     display: inline-flex;
     align-items: center;
     gap: 10px;
+
     cursor: pointer;
+
     border-radius: 3px;
-    margin-top: 15px;
-    transition: all 0.3s ease;
+
+    margin-top: 25px;
+
+    transition: 0.3s ease;
 }
 
 .butn span {
@@ -399,39 +602,49 @@ list-style: none;
 }
 
 .butn:hover {
-    background-color: #c9a227;
+    background: #c9a227;
     transform: translateY(-2px);
 }
 
-.butn:active {
-    transform: translateY(0);
-}
+
+/* =====================================================
+   FEATURES
+===================================================== */
 
 .badge-container {
     width: 100%;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     gap: 25px;
-    background-color: #f8f8f8;
+
+    background: #f8f8f8;
+
     padding: 40px 5%;
 }
 
 .badge-item {
     display: flex;
     align-items: center;
+
     gap: 15px;
 }
 
 .icon-wrapper {
     width: 50px;
     height: 50px;
+
     min-width: 50px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border: 1px solid #e0e0e0;
     border-radius: 50%;
-    background-color: #fff;
+
+    background: #fff;
 }
 
 .icon-wrapper img {
@@ -442,41 +655,61 @@ list-style: none;
 .badge-text h3 {
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 1px;
+
     color: #000;
+
     margin-bottom: 4px;
 }
 
 .badge-text p {
     font-size: 11px;
+
     color: #666;
+
     line-height: 1.4;
 }
 
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
 footer {
     width: 100%;
+
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
+
     gap: 40px;
-    background-color: #e4e4e4;
+
+    background: #e4e4e4;
+
     padding: 50px 8%;
 }
 
 .footer-sec1 img {
     width: 100px;
+
     margin-bottom: 10px;
 }
 
 .footer-sp {
     display: block;
+
     font-weight: bold;
+
     font-size: 20px;
+
     margin-bottom: 10px;
 }
 
 .footer-p {
     font-size: 14px;
+
     color: #333;
+
     line-height: 1.6;
 }
 
@@ -484,17 +717,24 @@ footer {
 .Quick-link h3,
 .Secure h3 {
     color: #000;
+
     font-size: 18px;
+
     margin-bottom: 15px;
+
     font-weight: bold;
 }
 
 .information a,
 .Quick-link a {
     display: block;
+
     color: #333;
+
     font-size: 14px;
+
     margin-bottom: 8px;
+
     transition: 0.3s;
 }
 
@@ -505,218 +745,184 @@ footer {
 
 .Secure p {
     font-size: 13px;
+
     color: #555;
+
     font-weight: 600;
 }
 
-.banner img {
-    width: 100%;
-    height: 550px;
-    object-fit: cover;
+
+/* =====================================================
+   MOBILE SIDEBAR
+===================================================== */
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 15000;
+}
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-.form-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
+.sidebar {
+    position: fixed;
+
+    top: 0;
+    right: -350px;
+
+    width: 330px;
+    max-width: 85%;
+
+    height: 100vh;
+
+    background: white;
+
+    z-index: 16000;
+
+    overflow-y: auto;
+
+    border-left: 1px solid #333;
+
+    transition: right 0.35s ease;
 }
 
-.form-container h2 {
-    font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    color: #222;
+.sidebar.active {
+    right: 0;
 }
 
-.subtitle {
-    font-size: 15px;
-    margin-bottom: 30px;
-    color: #111;
+.sidebar-header {
+    height: 85px;
+
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #292929;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.sidebar-header img {
+    width: 80px;
 }
 
-.form-container label {
-    display: block;
-    font-size: 15px;
-    margin-bottom: 8px;
-    color: #333;
-}
+.close-btn {
+    width: 40px;
+    height: 40px;
 
-.required {
-    color: #b30000;
-    font-weight: bold;
-    margin-left: 2px;
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="tel"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #fff;
-    border: 1px solid #111;
-    font-size: 14px;
-    color: #444;
-    border-radius: 8px;
-    outline: none;
-}
-
-.form-container input:focus {
-    border-color: #c9a227;
-}
-
-.form-container input::placeholder {
-    color: #757065;
-}
-
-.form-container button {
-    background-color: #111;
-    color: #fff;
     border: none;
-    padding: 11px 24px;
-    font-size: 15px;
-    border-radius: 4px;
+
+    background: transparent;
+
+    color: black;
+
+    font-size: 36px;
+
+    line-height: 1;
+
     cursor: pointer;
-    font-weight: 500;
+
     transition: 0.3s;
 }
 
-.form-container button:hover {
-    background-color: #c9a227;
+.close-btn:hover {
+    color: #18d889;
+
+    transform: rotate(90deg);
 }
 
-.contact-container {
-    max-width: 1100px;
+.sidebar-nav {
+    padding: 15px 20px;
+}
+
+.sidebar-nav > a,
+.sidebar-products {
     width: 100%;
-    margin: 50px auto;
-    padding: 0 20px;
-}
 
-.contact-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
+    min-height: 50px;
 
-.contact-header h1 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.contact-header p {
-    color: #666;
-    font-size: 15px;
-}
-
-.content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 30px;
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    padding: 40px;
-}
-
-.contact-info-card {
-    background-color: #f9f9f9;
-}
-
-.card h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-.info-group {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 25px;
-}
+    align-items: center;
+    justify-content: space-between;
 
-.info-icon {
-    width: 24px;
-    min-width: 24px;
-    margin-right: 15px;
-    margin-top: 3px;
-    display: flex;
-    justify-content: center;
-}
+    color: black;
 
-.info-text h3 {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
+    background: transparent;
 
-.info-text p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.4;
-}
-
-.contact-form .form-group {
-    margin-bottom: 20px;
-}
-
-.form-control {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #333;
-    outline: none;
-    transition: 0.2s;
-}
-
-.form-control:focus {
-    border-color: #c9a227;
-}
-
-textarea.form-control {
-    height: 150px;
-    resize: vertical;
-}
-
-.submit-btn {
-    background-color: #1a1a1a;
-    color: #fff;
     border: none;
-    padding: 14px 35px;
-    font-size: 14px;
+    border-bottom: 1px solid #242424;
+
+    font-size: 13px;
     font-weight: 600;
-    border-radius: 4px;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition: 0.3s;
 }
 
-.submit-btn:hover {
-    background-color: #c9a227;
+.sidebar-nav > a:hover,
+.sidebar-products:hover {
+    color: #18d889;
 }
+
+.sidebar-submenu {
+    display: none;
+
+    padding: 5px 0 5px 15px;
+}
+
+.sidebar-dropdown.active .sidebar-submenu {
+    display: block;
+}
+
+.sidebar-submenu a {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+    padding: 12px 8px;
+
+    border-bottom: 1px solid #1e1e1e;
+
+    transition: 0.3s;
+}
+
+.sidebar-submenu a:hover {
+    color: #18d889;
+
+    padding-left: 15px;
+}
+
+.arrow {
+    transition: 0.3s;
+}
+
+.sidebar-dropdown.active .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =====================================================
+   RESPONSIVE - 1200px
+===================================================== */
 
 @media (max-width: 1200px) {
 
-    .headercol-sec {
-        padding: 15px 30px;
+    .desktop-nav {
+        gap: 12px;
     }
 
-    .header-text {
-        gap: 8px;
-    }
-
-    .header-text > a,
-    .dropdown > a {
-        font-size: 12px;
-        padding-left: 7px;
-        padding-right: 7px;
+    .desktop-nav > a,
+    .dropdown-btn {
+        font-size: 11px;
     }
 
     .watch-container {
@@ -725,83 +931,36 @@ textarea.form-control {
 
     .categories {
         gap: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .badge-container {
-        padding: 35px 30px;
-    }
-
-    footer {
-        padding: 50px 30px;
-    }
-
-    .contact-container {
-        max-width: 1000px;
     }
 }
+
+
+/* =====================================================
+   RESPONSIVE - 992px
+===================================================== */
 
 @media (max-width: 992px) {
 
-    body {
-        padding-top: 120px;
-    }
-
-    .header-sec {
-        min-height: 40px;
-    }
-
-    .section-1 {
-        width: 50%;
-    }
-
-    .section-2 {
-        width: 50%;
-    }
-
-    .section-3 {
-        width: 100%;
-        padding: 8px 0;
-    }
-
-    .headercol-sec {
-        top: 40px;
-        height: 80px;
-        padding: 10px 20px;
-    }
-
-    .sectioncol-1 {
-        width: 30%;
-        justify-content: flex-start;
-    }
-
-    .sectioncol-1 img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .sectioncol-2 {
+    .desktop-nav {
         display: none;
     }
 
-    .sectioncol-3 {
-        width: 70%;
-        justify-content: flex-end;
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .sectioncol-3 .menu {
-        display: block;
+    .navbar {
+        padding: 10px 25px;
     }
 
     .watch-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
     }
 
     .categories {
         grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
     }
 
     .badge-container {
@@ -811,82 +970,70 @@ textarea.form-control {
     footer {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
 }
+
+
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
 
 @media (max-width: 768px) {
 
-    body {
-        padding-top: 115px;
-    }
-
     .header-sec {
         min-height: 35px;
-        flex-wrap: nowrap;
     }
 
     .section-1 {
         width: 50%;
+
         font-size: 11px;
+
         padding: 8px 4px;
     }
 
     .section-2 {
         width: 50%;
+
         font-size: 10px;
+
         padding: 8px 4px;
-        text-align: center;
     }
 
     .section-3 {
         display: none;
     }
 
-    .headercol-sec {
+    .navbar {
         top: 35px;
-        height: 80px;
-        padding: 8px 15px;
+
+        min-height: 80px;
+
+        padding: 8px 18px;
     }
 
-    .sectioncol-1 {
-        width: 50%;
+    .nav-logo img {
+        width: 120px;
     }
 
-    .sectioncol-1 img {
-        width: 65px;
-        height: 65px;
+    .main-content {
+        padding-top: 115px;
     }
 
-    .sectioncol-3 {
-        width: 50%;
-        gap: 15px;
-    }
-
-    .sectioncol-3 img {
-        width: 20px;
-        height: 20px;
-    }
-
-    .sectioncol-3 .menu {
-        width: 25px;
-        height: 25px;
-    }
-
-    .banner img {
+    .hero-slider .carousel-item img {
         height: 350px;
     }
 
     .cat-h1 {
         font-size: 25px;
-        margin: 35px 0 25px;
+
+        margin: 35px 10px 25px;
     }
 
     .categories {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 20px;
+
         padding: 0 18px;
     }
 
@@ -895,30 +1042,19 @@ textarea.form-control {
         height: 150px;
     }
 
-    .Rolex,
-    .Citizen,
-    .smart,
-    .vintage,
-    .Repair {
-        font-size: 15px;
-        margin-top: 8px;
-    }
-
     .watch-collection {
         width: 100%;
+
         padding: 30px 18px;
+
+        margin: 40px auto;
     }
 
     .watch-title {
         font-size: 25px;
     }
 
-    .watch-subtitle {
-        font-size: 14px;
-    }
-
     .watch-container {
-        grid-template-columns: repeat(2, 1fr);
         gap: 18px;
     }
 
@@ -931,49 +1067,36 @@ textarea.form-control {
     }
 
     .watch-info h2 {
-        font-size: 18px;
-    }
-
-    .watch-description {
-        font-size: 13px;
-    }
-
-    .watch-price {
         font-size: 17px;
     }
 
-    .watch-btn {
+    .watch-description {
         font-size: 12px;
-        padding: 9px 15px;
     }
 
     .badge-container {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 20px;
+
         padding: 35px 18px;
     }
 
     footer {
         grid-template-columns: repeat(2, 1fr);
+
         gap: 30px;
+
         padding: 40px 25px;
-    }
-
-    .contact-container {
-        margin: 30px auto;
-        padding: 0 18px;
-    }
-
-    .card {
-        padding: 25px;
     }
 }
 
-@media (max-width: 576px) {
 
-    body {
-        padding-top: 105px;
-    }
+/* =====================================================
+   RESPONSIVE - 576px
+===================================================== */
+
+@media (max-width: 576px) {
 
     .header-sec {
         min-height: 32px;
@@ -982,46 +1105,49 @@ textarea.form-control {
     .section-1,
     .section-2 {
         font-size: 9px;
+
         padding: 7px 2px;
     }
 
-    .headercol-sec {
+    .navbar {
         top: 32px;
-        height: 73px;
+
+        min-height: 73px;
+
         padding: 8px 12px;
     }
 
-    .sectioncol-1 img {
-        width: 58px;
-        height: 58px;
+    .nav-logo img {
+        width: 100px;
     }
 
-    .sectioncol-3 {
+    .nav-icons {
         gap: 12px;
     }
 
-    .sectioncol-3 img {
+    .nav-icons a img,
+    .menu-btn img {
         width: 18px;
         height: 18px;
     }
 
-    .sectioncol-3 .menu {
-        width: 23px;
-        height: 23px;
+    .main-content {
+        padding-top: 105px;
     }
 
-    .banner img {
+    .hero-slider .carousel-item img {
         height: 220px;
     }
 
     .cat-h1 {
         font-size: 21px;
+
         margin: 25px 10px 20px;
     }
 
     .categories {
-        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+
         padding: 0 12px;
     }
 
@@ -1030,30 +1156,28 @@ textarea.form-control {
         height: 130px;
     }
 
-    .Rolex,
-    .Citizen,
-    .smart,
-    .vintage,
-    .Repair {
+    .categories > a > span {
         font-size: 13px;
-    }
-
-    .watch-collection {
-        padding: 25px 15px;
-        margin: 40px auto;
+        margin-top: 8px;
     }
 
     .watch-title {
         font-size: 21px;
     }
 
+    .collection-heading {
+        font-size: 19px;
+    }
+
     .watch-subtitle {
         font-size: 12px;
+
         margin-bottom: 25px;
     }
 
     .watch-container {
         grid-template-columns: 1fr;
+
         gap: 20px;
     }
 
@@ -1069,99 +1193,65 @@ textarea.form-control {
         font-size: 19px;
     }
 
-    .watch-description {
-        font-size: 13px;
-    }
-
     .watch-price {
         font-size: 18px;
     }
 
     .watch-btn {
         font-size: 13px;
-        padding: 10px 18px;
-    }
 
-    .butn {
-        font-size: 13px;
         padding: 10px 18px;
     }
 
     .badge-container {
         grid-template-columns: 1fr;
+
         gap: 25px;
+
         padding: 30px 20px;
-    }
-
-    .badge-item {
-        text-align: left;
-    }
-
-    .icon-wrapper {
-        min-width: 45px;
-        width: 45px;
-        height: 45px;
-    }
-
-    .badge-text h3 {
-        font-size: 14px;
-    }
-
-    .badge-text p {
-        font-size: 11px;
     }
 
     footer {
         grid-template-columns: 1fr;
+
         text-align: center;
+
         gap: 30px;
+
         padding: 35px 20px;
     }
 
     .footer-sec1 img {
-        width: 90px;
         margin: 0 auto 10px;
     }
 
-    .footer-sp {
-        font-size: 18px;
-    }
-
-    .contact-header h1 {
-        font-size: 24px;
-    }
-
-    .content-grid {
-        gap: 20px;
-    }
-
-    .card {
-        padding: 20px;
+    .sidebar {
+        width: 310px;
     }
 }
 
+
+/* =====================================================
+   RESPONSIVE - 380px
+===================================================== */
+
 @media (max-width: 380px) {
 
-    .sectioncol-1 img {
-        width: 52px;
-        height: 52px;
+    .nav-logo img {
+        width: 90px;
     }
 
-    .sectioncol-3 {
-        gap: 9px;
+    .nav-icons {
+        gap: 8px;
     }
 
-    .sectioncol-3 img {
+    .nav-icons a img,
+    .menu-btn img {
         width: 16px;
         height: 16px;
     }
 
-    .sectioncol-3 .menu {
-        width: 21px;
-        height: 21px;
-    }
-
-    .banner img {
+    .hero-slider .carousel-item img {
         height: 190px;
     }
 
@@ -1171,6 +1261,7 @@ textarea.form-control {
 
     .categories {
         gap: 12px;
+
         padding: 0 10px;
     }
 
@@ -1179,11 +1270,7 @@ textarea.form-control {
         height: 115px;
     }
 
-    .Rolex,
-    .Citizen,
-    .smart,
-    .vintage,
-    .Repair {
+    .categories > a > span {
         font-size: 11px;
     }
 
@@ -1205,9 +1292,5 @@ textarea.form-control {
 
     .watch-price {
         font-size: 16px;
-    }
-
-    footer {
-        padding: 30px 15px;
     }
 }
