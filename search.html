@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Watches | Alberto Watch</title>
+
+    <!-- Your Existing CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/boots.css">
+    <link rel="stylesheet" href="assets/css/a.css">
+
+    <!-- Search Page CSS -->
+    <link rel="stylesheet" href="assets/css/search.css">
+
+    <link rel="shortcut icon"
+        href="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png"
+        type="image/png">
+</head>
+
+<body class="search-page">
+
+    <!-- ================= TOP HEADER ================= -->
+    <div class="header-sec">
+        <div class="section-1"><span>Welcome to Alberto Watches</span></div>
+        <div class="section-2">
+            <marquee behavior="scroll" direction="left" scrollamount="5">100% AUTHENTIC WATCHES | OVER THOUSANDS OF SATISFIED CUSTOMERS | EXCELLENT AFTER-SALE SERVICE | FOR COMPLAINT & SUGGESTIONS </marquee>
+        </div>
+        <div class="section-3">
+            <img src="assets/icon/facebook-f-brands-solid-full.svg"  alt="">
+            <img src="assets/icon/instagram-brands-solid-full.svg" alt="">
+            <img src="assets/icon/linkedin-brands-solid-full.svg" alt="">
+        </div>
+        </div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+  <div class="headercol-sec">
+        <div class="sectioncol-1">
+        <a href="index.html">
+            <img src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76.png"  alt="">
+        </a>  
+        </div>
+        <div class="sectioncol-2">
+            <div class="header-text">
+        <a href="index.html">HOME</a>
+        <li class="dropdown">
+            <a href="#">PRODUCTS &nabla;</a>
+
+            <ul class="dropdown-menu">
+                <li><a href="rolex.html">Rolex watches</a></li>
+                <li><a href="vintage.html">Vintage Watches</a></li>
+                <li><a href="citizen.html">Citizen Watches</a></li>
+                <li><a href="smart.html">Smart Watches</a></li>
+            </ul>
+        </li>
+        <a href="about.html">About </a>
+        <a href="repair.html">Repairs & Servicing</a>
+        <a href="apprasial.html">Appraisal</a>
+        <a href="#">Store</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Search</a>
+        </div>
+        
+        </div>
+        <div class="sectioncol-3">
+            <img src="assets/icon/sistrix-brands-solid-full.svg"  alt="">
+            <img src="assets/icon/user-solid-full.svg" alt="">
+            <img src="assets/icon/bag-shopping-solid-full.svg" alt="">
+            <img src="assets/icon/bars-solid-full.svg" class="menu" alt="">
+        </div>
+        </div>
+
+    <!-- ================= SEARCH HERO ================= -->
+
+    <section class="search-hero">
+
+        <div class="search-hero-content">
+
+            <p class="search-small-title">
+                ALBERTO WATCHES
+            </p>
+
+            <h1>
+                SEARCH WATCHES
+            </h1>
+
+            <p>
+                Find your perfect watch from our premium collection.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH SECTION ================= -->
+
+    <main class="search-container">
+
+        <!-- SEARCH BOX -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search watch by name..."
+                autocomplete="off">
+
+            <button id="searchBtn">
+                <img src="assets/icon/sistrix-brands-solid-full.svg"
+                    alt="Search">
+                SEARCH
+            </button>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="search-filters">
+
+            <div class="category-filter">
+
+                <button class="filter-btn active"
+                    data-category="all">
+                    ALL
+                </button>
+
+                <button class="filter-btn"
+                    data-category="Rolex">
+                    ROLEX
+                </button>
+
+                <button class="filter-btn"
+                    data-category="Citizen">
+                    CITIZEN
+                </button>
+
+                <button class="filter-btn"
+                    data-category="Vintage">
+                    VINTAGE
+                </button>
+
+                <button class="filter-btn"
+                    data-category="Smart">
+                    SMART
+                </button>
+
+                <button class="filter-btn"
+                    data-category="Michael Kors">
+                    MICHAEL KORS
+                </button>
+
+                <button class="filter-btn"
+                    data-category="Bulova">
+                    BULOVA
+                </button>
+
+            </div>
+
+
+            <!-- SORT -->
+
+            <div class="sort-box">
+
+                <label for="sortSelect">
+                    Sort By:
+                </label>
+
+                <select id="sortSelect">
+
+                    <option value="default">
+                        Default
+                    </option>
+
+                    <option value="name-asc">
+                        Name A - Z
+                    </option>
+
+                    <option value="name-desc">
+                        Name Z - A
+                    </option>
+
+                    <option value="price-low">
+                        Price Low - High
+                    </option>
+
+                    <option value="price-high">
+                        Price High - Low
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+
+        <div class="search-result-top">
+
+            <h2>
+                WATCH COLLECTION
+            </h2>
+
+            <p id="resultCount">
+                18 Watches Found
+            </p>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div class="search-product-grid"
+            id="productGrid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="search-product"
+                data-name="Rolex Submariner"
+                data-category="Rolex"
+                data-price="19999">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/rolex1.jpg"
+                        alt="Rolex Submariner">
+
+                    <span>
+                        ROLEX
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Rolex Watches
+                    </p>
+
+                    <h3>
+                        Rolex Submariner
+                    </h3>
+
+                    <strong>
+                        Rs. 19,999
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="search-product"
+                data-name="Rolex Datejust 41"
+                data-category="Rolex"
+                data-price="9999">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/m126334-0002.avif"
+                        alt="Rolex Datejust 41">
+
+                    <span>
+                        ROLEX
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Luxury Watches
+                    </p>
+
+                    <h3>
+                        Rolex Datejust 41
+                    </h3>
+
+                    <strong>
+                        Rs. 9,999
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="search-product"
+                data-name="Rolex Day-Date 40"
+                data-category="Rolex"
+                data-price="14999">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/181798015_m228238_0069_01_4949.webp"
+                        alt="Rolex Day-Date 40">
+
+                    <span>
+                        ROLEX
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Rolex Day-Date 40
+                    </p>
+
+                    <h3>
+                        Rolex Day-Date 40
+                    </h3>
+
+                    <strong>
+                        Rs. 14,999
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="search-product"
+                data-name="Citizen Chronograph Blue Dial"
+                data-category="Citizen"
+                data-price="8000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/citizen-chronograph.avif"
+                        alt="Citizen Chronograph">
+
+                    <span>
+                        CITIZEN
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Citizen Watches
+                    </p>
+
+                    <h3>
+                        Citizen Chronograph Blue Dial
+                    </h3>
+
+                    <strong>
+                        Rs. 8,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="search-product"
+                data-name="Citizen Tsuyosa Automatic"
+                data-category="Citizen"
+                data-price="10000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/NJ0151-88M.jpg"
+                        alt="Citizen Tsuyosa Automatic">
+
+                    <span>
+                        CITIZEN
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Citizen Watches
+                    </p>
+
+                    <h3>
+                        Citizen Tsuyosa Automatic
+                    </h3>
+
+                    <strong>
+                        Rs. 10,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="search-product"
+                data-name="Citizen Eco-Drive Black Dial"
+                data-category="Citizen"
+                data-price="12000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/69783_unnamed-file-1.avif"
+                        alt="Citizen Eco Drive">
+
+                    <span>
+                        CITIZEN
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Citizen Watches
+                    </p>
+
+                    <h3>
+                        Citizen Eco-Drive Black Dial
+                    </h3>
+
+                    <strong>
+                        Rs. 12,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+
+            <div class="search-product"
+                data-name="Casio Vintage Ladies Digital Watch"
+                data-category="Vintage"
+                data-price="19400">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/1.avif"
+                        alt="Casio Vintage Ladies">
+
+                    <span>
+                        VINTAGE
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Vintage Watches
+                    </p>
+
+                    <h3>
+                        Casio Vintage Ladies Digital Watch
+                    </h3>
+
+                    <strong>
+                        Rs. 19,400
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+
+            <div class="search-product"
+                data-name="Casio Vintage Unisex Digital Watch"
+                data-category="Vintage"
+                data-price="18700">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/2.avif"
+                        alt="Casio Vintage Unisex">
+
+                    <span>
+                        VINTAGE
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Vintage Watches
+                    </p>
+
+                    <h3>
+                        Casio Vintage Unisex Digital Watch
+                    </h3>
+
+                    <strong>
+                        Rs. 18,700
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 9 -->
+
+            <div class="search-product"
+                data-name="Casio Vintage Analog Digital Watch"
+                data-category="Vintage"
+                data-price="15000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/3.avif"
+                        alt="Casio Vintage Analog Digital">
+
+                    <span>
+                        VINTAGE
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Vintage Watches
+                    </p>
+
+                    <h3>
+                        Casio Vintage Analog-Digital Watch
+                    </h3>
+
+                    <strong>
+                        Rs. 15,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 10 -->
+
+            <div class="search-product"
+                data-name="Samsung Galaxy Watch 7"
+                data-category="Smart"
+                data-price="42500">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/images (6).jpg"
+                        alt="Samsung Galaxy Watch 7">
+
+                    <span>
+                        SMART
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Smart Watches
+                    </p>
+
+                    <h3>
+                        Samsung Galaxy Watch 7
+                    </h3>
+
+                    <strong>
+                        Rs. 42,500
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 11 -->
+
+            <div class="search-product"
+                data-name="Samsung Galaxy Watch 8"
+                data-category="Smart"
+                data-price="18700">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/images (7).jpg"
+                        alt="Samsung Galaxy Watch 8">
+
+                    <span>
+                        SMART
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Smart Watches
+                    </p>
+
+                    <h3>
+                        Samsung Galaxy Watch 8
+                    </h3>
+
+                    <strong>
+                        Rs. 18,700
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 12 -->
+
+            <div class="search-product"
+                data-name="Samsung Galaxy Watch FE"
+                data-category="Smart"
+                data-price="30999">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/images (8).jpg"
+                        alt="Samsung Galaxy Watch FE">
+
+                    <span>
+                        SMART
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Smart Watches
+                    </p>
+
+                    <h3>
+                        Samsung Galaxy Watch FE
+                    </h3>
+
+                    <strong>
+                        Rs. 30,999
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 13 -->
+
+            <div class="search-product"
+                data-name="Michael Kors Rose Gold Stainless Steel Green"
+                data-category="Michael Kors"
+                data-price="40000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/michael.jfif"
+                        alt="Michael Kors Rose Gold">
+
+                    <span>
+                        MICHAEL KORS
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Michael Kors Watches
+                    </p>
+
+                    <h3>
+                        Michael Kors Rose Gold Stainless Steel Green
+                    </h3>
+
+                    <strong>
+                        Rs. 40,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 14 -->
+
+            <div class="search-product"
+                data-name="Michael Kors Black Stainless Steel Black"
+                data-category="Michael Kors"
+                data-price="35000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/michael1.jfif"
+                        alt="Michael Kors Black">
+
+                    <span>
+                        MICHAEL KORS
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Michael Kors Watches
+                    </p>
+
+                    <h3>
+                        Michael Kors Black Stainless Steel Black
+                    </h3>
+
+                    <strong>
+                        Rs. 35,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 15 -->
+
+            <div class="search-product"
+                data-name="Michael Kors Navy Blue Silicone Strap"
+                data-category="Michael Kors"
+                data-price="40000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/michael2.jfif"
+                        alt="Michael Kors Navy Blue">
+
+                    <span>
+                        MICHAEL KORS
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Michael Kors Watches
+                    </p>
+
+                    <h3>
+                        Michael Kors Navy Blue Silicone Strap
+                    </h3>
+
+                    <strong>
+                        Rs. 40,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 16 -->
+
+            <div class="search-product"
+                data-name="Bulova Wilton Chronograph"
+                data-category="Bulova"
+                data-price="85000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/Bulavo.jpeg"
+                        alt="Bulova Wilton Chronograph">
+
+                    <span>
+                        BULOVA
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Bulova Watches
+                    </p>
+
+                    <h3>
+                        Bulova Wilton Chronograph
+                    </h3>
+
+                    <strong>
+                        Rs. 85,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 17 -->
+
+            <div class="search-product"
+                data-name="Bulova Wilton Chronograph"
+                data-category="Bulova"
+                data-price="80000">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/bulavo2.jpeg"
+                        alt="Bulova Wilton Chronograph">
+
+                    <span>
+                        BULOVA
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Bulova Watches
+                    </p>
+
+                    <h3>
+                        Bulova Wilton Chronograph
+                    </h3>
+
+                    <strong>
+                        Rs. 80,000
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 18 -->
+
+            <div class="search-product"
+                data-name="Bulova Classic Automatic"
+                data-category="Bulova"
+                data-price="84929">
+
+                <div class="search-product-image">
+
+                    <img src="assets/img/bulavo3.jpeg"
+                        alt="Bulova Classic Automatic">
+
+                    <span>
+                        BULOVA
+                    </span>
+
+                </div>
+
+                <div class="search-product-info">
+
+                    <p>
+                        Bulova Watches
+                    </p>
+
+                    <h3>
+                        Bulova Classic Automatic
+                    </h3>
+
+                    <strong>
+                        Rs. 84,929
+                    </strong>
+
+                    <button class="search-cart-btn">
+                        ADD TO CART
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NO RESULT -->
+
+        <div class="no-result" id="noResult">
+
+            <div class="no-result-icon">
+                ⌚
+            </div>
+
+            <h3>
+                No Watches Found
+            </h3>
+
+            <p>
+                Try searching with another watch name or category.
+            </p>
+
+            <button id="resetSearch">
+                SHOW ALL WATCHES
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="watch-features">
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h3>
+                FAST DELIVERY
+            </h3>
+
+            <p>
+                Fast and secure delivery across Pakistan.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                ✓
+            </div>
+
+            <h3>
+                100% AUTHENTIC
+            </h3>
+
+            <p>
+                Original and authentic watches.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                ♧
+            </div>
+
+            <h3>
+                CUSTOMER SUPPORT
+            </h3>
+
+            <p>
+                Our team is always here to help.
+            </p>
+
+        </div>
+
+
+        <div class="feature-box">
+
+            <div class="feature-icon">
+                💳
+            </div>
+
+            <h3>
+                SECURE PAYMENT
+            </h3>
+
+            <p>
+                Safe and secure payment options.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <div class="badge-container">
+            <!-- Badge 1 -->
+            <div class="badge-item">
+                <div class="icon-wrapper">
+                <img src="assets/icon/dolly-solid-full.svg" alt="">
+                </div>
+                <div class="badge-text">
+                    <h3>FAST DELIVERY</h3>
+                    <p>24-hour delivery in Lahore & nationwide shipping across Pakistan</p>
+                </div>
+            </div>
+
+            <!-- Badge 2 -->
+            <div class="badge-item">
+                <div class="icon-wrapper">
+                    <img src="assets/icon/shield-halved-solid-full.svg" alt="">
+                </div>
+                <div class="badge-text">
+                    <h3>100% AUTHENTIC</h3>
+                    <p>Genuine branded watches with official warranty</p>
+                </div>
+            </div>
+
+            <!-- Badge 3 -->
+            <div class="badge-item">
+                <div class="icon-wrapper">
+                <img src="assets/icon/headphones-regular-full.svg" alt="">
+                </div>
+                <div class="badge-text">
+                    <h3>24/7 SUPPORT</h3>
+                    <p>Dedicated customer support via call & WhatsApp</p>
+                </div>
+            </div>
+
+            <!-- Badge 4 -->
+            <div class="badge-item">
+                <div class="icon-wrapper">
+                <img src="assets/icon/gift-solid-full.svg" alt="">
+                </div>
+                <div class="badge-text">
+                    <h3>SECURE PAYMENTS</h3>
+                    <p>Cash on delivery & secure online payment options</p>
+                </div>
+            </div>
+        </div>
+    <footer>
+    <div class="footer-sec1">
+    <img src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png" alt="">
+    <span class="footer-sp">Alberto Watches</span>
+    <p class="footer-p">Your Home of Affordable Premium <br> Quality Footwear & Bags that Never Go <br> Out of Style.</p>
+    </div>
+    <div class="information">
+    <h3>Information</h3>
+    <a href="index.html">Home</a>
+    <br>
+    <a href="about.html">About Us</a><br>
+    <a href="repair.html">
+    Repairs & Servicing</a><br>
+    <a href="contact.html">Contact Us</a><br>
+    <a href="#">Store </a>
+    </div>
+
+    <div class="Secure">
+    <h3 class="secure">Secure payments</h3>
+    <p class="pra">
+        Alberto watches ONLINE LUXURY WATCHES
+
+    </p>
+    </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+<script src="assets/js/script.js"></script>
+<script src="assets/js/boots.js"></script>
+<script src="assets/js/search.js"></script>
+
+</body>
+
+</html>
