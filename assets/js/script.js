@@ -1,88 +1,421 @@
-const yearSelect = document.getElementById("year");
-        for (let year = new Date().getFullYear(); year >= 1980; year--) {
-            const option = document.createElement("option");
-            option.value = year;
-            option.textContent = year;
-            yearSelect.appendChild(option);
+/* =====================================================
+   ALBERTO WATCHES
+   MAIN JAVASCRIPT
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =================================================
+       ELEMENTS
+    ================================================= */
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileMenu = document.querySelector(".sectioncol-2");
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
+
+    const cartBtn = document.querySelector(".cart-icon-btn");
+    const cartSidebar = document.querySelector(".cart-sidebar");
+    const cartOverlay = document.querySelector(".cart-overlay");
+    const closeCart = document.querySelector(".close-cart");
+
+    const cartItemsContainer = document.querySelector(".cart-items");
+    const totalPrice = document.querySelector(".total-price");
+    const cartCount = document.querySelector(".cart-count");
+    const emptyCart = document.querySelector(".empty-cart");
+
+    const checkoutBtn = document.querySelector(".checkout-btn");
+
+    let cart = [];
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    if (menuBtn) {
+
+        menuBtn.addEventListener("click", function () {
+
+            mobileMenu.classList.toggle("active");
+
+        });
+
+    }
+
+
+    /* =================================================
+       MOBILE DROPDOWN
+    ================================================= */
+
+    if (dropdownToggle) {
+
+        dropdownToggle.addEventListener("click", function (event) {
+
+            if (window.innerWidth <= 768) {
+
+                event.preventDefault();
+
+                dropdown.classList.toggle("active");
+
+            }
+
+        });
+
+    }
+
+
+    /* =================================================
+       CLOSE MOBILE MENU WHEN LINK CLICKED
+    ================================================= */
+
+    const menuLinks = document.querySelectorAll(
+        ".header-text > a:not(.dropdown-toggle)"
+    );
+
+    menuLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("active");
+
+        });
+
+    });
+
+
+    /* =================================================
+       CART OPEN
+    ================================================= */
+
+    if (cartBtn) {
+
+        cartBtn.addEventListener("click", function () {
+
+            cartSidebar.classList.add("active");
+            cartOverlay.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    }
+
+
+    /* =================================================
+       CART CLOSE
+    ================================================= */
+
+    function closeCartSidebar() {
+
+        cartSidebar.classList.remove("active");
+        cartOverlay.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    if (closeCart) {
+
+        closeCart.addEventListener("click", closeCartSidebar);
+
+    }
+
+
+    if (cartOverlay) {
+
+        cartOverlay.addEventListener("click", closeCartSidebar);
+
+    }
+
+
+    /* =================================================
+       ADD TO CART
+    ================================================= */
+
+    const addCartButtons = document.querySelectorAll(".add-cart");
+
+    addCartButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const name = button.dataset.name;
+            const price = Number(button.dataset.price);
+            const image = button.dataset.image;
+
+            const existingProduct = cart.find(function (item) {
+                return item.name === name;
+            });
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity += 1;
+
+            } else {
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+
+            }
+
+
+            updateCart();
+
+            cartSidebar.classList.add("active");
+            cartOverlay.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+
+            /* Button animation */
+
+            const originalText = button.textContent;
+
+            button.textContent = "Added ✓";
+
+            button.style.background = "#fff";
+
+            setTimeout(function () {
+
+                button.textContent = originalText;
+                button.style.background = "";
+
+            }, 1000);
+
+        });
+
+    });
+
+
+    /* =================================================
+       UPDATE CART
+    ================================================= */
+
+    function updateCart() {
+
+        cartItemsContainer.innerHTML = "";
+
+        let total = 0;
+        let quantityTotal = 0;
+
+
+        if (cart.length === 0) {
+
+            emptyCart.classList.remove("hidden");
+
+        } else {
+
+            emptyCart.classList.add("hidden");
+
         }
 
-        const images = document.getElementById("watchImages");
-        const preview = document.getElementById("imagePreview");
 
-        images.addEventListener("change", function () {
+        cart.forEach(function (item, index) {
 
-            preview.innerHTML = "";
+            total += item.price * item.quantity;
 
-            Array.from(this.files).forEach(file => {
+            quantityTotal += item.quantity;
 
-                const reader = new FileReader();
 
-                reader.onload = function (e) {
+            const cartItem = document.createElement("div");
 
-                    const img = document.createElement("img");
+            cartItem.classList.add("cart-item");
 
-                    img.src = e.target.result;
 
-                    preview.appendChild(img);
-                };
+            cartItem.innerHTML = `
 
-                reader.readAsDataURL(file);
+                <div class="cart-item-image">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                    >
+
+                </div>
+
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <div class="cart-item-price">
+                        Rs. ${formatPrice(item.price)}
+                    </div>
+
+                    <div style="
+                        color:#888;
+                        font-size:11px;
+                        margin-top:5px;
+                    ">
+                        Quantity: ${item.quantity}
+                    </div>
+
+                    <button
+                        class="remove-item"
+                        data-index="${index}"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            `;
+
+
+            cartItemsContainer.appendChild(cartItem);
+
+        });
+
+
+        totalPrice.textContent =
+            "Rs. " + formatPrice(total);
+
+
+        cartCount.textContent = quantityTotal;
+
+
+        /* Remove buttons */
+
+        const removeButtons =
+            document.querySelectorAll(".remove-item");
+
+
+        removeButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const index =
+                    Number(button.dataset.index);
+
+                cart.splice(index, 1);
+
+                updateCart();
+
             });
 
         });
 
-        const brand = document.getElementById("brand");
-        const model = document.getElementById("model");
-        const condition = document.getElementById("condition");
-        const year = document.getElementById("year");
+    }
 
-        function updateEstimate() {
 
-            document.getElementById("showBrand").textContent =
-                brand.value || "---";
+    /* =================================================
+       PRICE FORMAT
+    ================================================= */
 
-            document.getElementById("showModel").textContent =
-                model.value || "---";
+    function formatPrice(price) {
 
-            document.getElementById("showCondition").textContent =
-                condition.options[condition.selectedIndex]?.text || "---";
+        return price.toLocaleString("en-PK");
 
-            document.getElementById("showYear").textContent =
-                year.value || "---";
+    }
 
-            let baseValue = 25000;
 
-            if (condition.value === "excellent") {
-                baseValue = 75000;
-            } else if (condition.value === "very-good") {
-                baseValue = 60000;
-            } else if (condition.value === "good") {
-                baseValue = 45000;
-            } else if (condition.value === "fair") {
-                baseValue = 30000;
-            } else if (condition.value === "poor") {
-                baseValue = 15000;
+    /* =================================================
+       CHECKOUT
+    ================================================= */
+
+    if (checkoutBtn) {
+
+        checkoutBtn.addEventListener("click", function () {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty!");
+
+                return;
+
             }
 
-            document.getElementById("estimatedValue").textContent =
-                "PKR " + baseValue.toLocaleString();
-        }
 
-        brand.addEventListener("input", updateEstimate);
-        model.addEventListener("input", updateEstimate);
-        condition.addEventListener("change", updateEstimate);
-        year.addEventListener("change", updateEstimate);
+            let message =
+                "Order Summary:\n\n";
 
-        document.getElementById("appraisalForm").addEventListener("submit", function(e) {
 
-            e.preventDefault();
+            cart.forEach(function (item) {
 
-            alert("Your appraisal request has been submitted successfully!");
+                message +=
+                    item.name +
+                    " x " +
+                    item.quantity +
+                    " = Rs. " +
+                    formatPrice(
+                        item.price * item.quantity
+                    ) +
+                    "\n";
+
+            });
+
+
+            let total = cart.reduce(
+                function (sum, item) {
+
+                    return sum +
+                        item.price * item.quantity;
+
+                },
+                0
+            );
+
+
+            message +=
+                "\nTotal: Rs. " +
+                formatPrice(total);
+
+
+            alert(message);
 
         });
 
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("active");
+    }
+
+
+    /* =================================================
+       ESC KEY
+    ================================================= */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            closeCartSidebar();
+
+            mobileMenu.classList.remove("active");
+
+            dropdown.classList.remove("active");
+
         }
 
-        
+    });
+
+
+    /* =================================================
+       WINDOW RESIZE
+    ================================================= */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 768) {
+
+            mobileMenu.classList.remove("active");
+            dropdown.classList.remove("active");
+
+        }
+
+    });
+
+
+    /* =================================================
+       INITIAL CART
+    ================================================= */
+
+    updateCart();
+
+});
+
