@@ -1,152 +1,421 @@
-// app.js
+/* =====================================================
+   ALBERTO WATCHES
+   MAIN JAVASCRIPT
+===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================================
-       MOBILE SIDEBAR
-    ========================================= */
+    /* =================================================
+       ELEMENTS
+    ================================================= */
 
-    const menuBtn = document.getElementById("menuBtn");
-    const closeBtn = document.getElementById("closeBtn");
-    const sidebar = document.getElementById("sidebar");
-    const sidebarOverlay = document.getElementById("sidebarOverlay");
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileMenu = document.querySelector(".sectioncol-2");
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
 
-    function openSidebar() {
-        sidebar.classList.add("active");
-        sidebarOverlay.classList.add("active");
+    const cartBtn = document.querySelector(".cart-icon-btn");
+    const cartSidebar = document.querySelector(".cart-sidebar");
+    const cartOverlay = document.querySelector(".cart-overlay");
+    const closeCart = document.querySelector(".close-cart");
 
-        menuBtn.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-    }
+    const cartItemsContainer = document.querySelector(".cart-items");
+    const totalPrice = document.querySelector(".total-price");
+    const cartCount = document.querySelector(".cart-count");
+    const emptyCart = document.querySelector(".empty-cart");
 
-    function closeSidebar() {
-        sidebar.classList.remove("active");
-        sidebarOverlay.classList.remove("active");
+    const checkoutBtn = document.querySelector(".checkout-btn");
 
-        menuBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-    }
+    let cart = [];
+
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
 
     if (menuBtn) {
-        menuBtn.addEventListener("click", openSidebar);
-    }
 
-    if (closeBtn) {
-        closeBtn.addEventListener("click", closeSidebar);
-    }
+        menuBtn.addEventListener("click", function () {
 
-    if (sidebarOverlay) {
-        sidebarOverlay.addEventListener("click", closeSidebar);
-    }
-
-
-    /* =========================================
-       MOBILE PRODUCTS DROPDOWN
-    ========================================= */
-
-    const sidebarProducts =
-        document.getElementById("sidebarProducts");
-
-    const sidebarDropdown =
-        document.getElementById("sidebarDropdown");
-
-    if (sidebarProducts && sidebarDropdown) {
-
-        sidebarProducts.addEventListener("click", function () {
-
-            sidebarDropdown.classList.toggle("active");
+            mobileMenu.classList.toggle("active");
 
         });
 
     }
 
 
-    /* =========================================
-       DESKTOP PRODUCTS DROPDOWN
-    ========================================= */
+    /* =================================================
+       MOBILE DROPDOWN
+    ================================================= */
 
-    const desktopProductsBtn =
-        document.getElementById("desktopProductsBtn");
+    if (dropdownToggle) {
 
-    const desktopDropdown =
-        document.querySelector(".nav-dropdown");
+        dropdownToggle.addEventListener("click", function (event) {
 
-    if (desktopProductsBtn && desktopDropdown) {
+            if (window.innerWidth <= 768) {
 
-        desktopProductsBtn.addEventListener("click", function (event) {
+                event.preventDefault();
 
-            event.stopPropagation();
+                dropdown.classList.toggle("active");
 
-            desktopDropdown.classList.toggle("open");
+            }
 
         });
 
     }
 
 
-    /* Close desktop dropdown when clicking elsewhere */
+    /* =================================================
+       CLOSE MOBILE MENU WHEN LINK CLICKED
+    ================================================= */
 
-    document.addEventListener("click", function (event) {
+    const menuLinks = document.querySelectorAll(
+        ".header-text > a:not(.dropdown-toggle)"
+    );
 
-        if (
-            desktopDropdown &&
-            !desktopDropdown.contains(event.target)
-        ) {
-            desktopDropdown.classList.remove("open");
-        }
+    menuLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("active");
+
+        });
 
     });
 
 
-    /* =========================================
+    /* =================================================
+       CART OPEN
+    ================================================= */
+
+    if (cartBtn) {
+
+        cartBtn.addEventListener("click", function () {
+
+            cartSidebar.classList.add("active");
+            cartOverlay.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    }
+
+
+    /* =================================================
+       CART CLOSE
+    ================================================= */
+
+    function closeCartSidebar() {
+
+        cartSidebar.classList.remove("active");
+        cartOverlay.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    if (closeCart) {
+
+        closeCart.addEventListener("click", closeCartSidebar);
+
+    }
+
+
+    if (cartOverlay) {
+
+        cartOverlay.addEventListener("click", closeCartSidebar);
+
+    }
+
+
+    /* =================================================
+       ADD TO CART
+    ================================================= */
+
+    const addCartButtons = document.querySelectorAll(".add-cart");
+
+    addCartButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const name = button.dataset.name;
+            const price = Number(button.dataset.price);
+            const image = button.dataset.image;
+
+            const existingProduct = cart.find(function (item) {
+                return item.name === name;
+            });
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity += 1;
+
+            } else {
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+
+            }
+
+
+            updateCart();
+
+            cartSidebar.classList.add("active");
+            cartOverlay.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+
+            /* Button animation */
+
+            const originalText = button.textContent;
+
+            button.textContent = "Added ✓";
+
+            button.style.background = "#fff";
+
+            setTimeout(function () {
+
+                button.textContent = originalText;
+                button.style.background = "";
+
+            }, 1000);
+
+        });
+
+    });
+
+
+    /* =================================================
+       UPDATE CART
+    ================================================= */
+
+    function updateCart() {
+
+        cartItemsContainer.innerHTML = "";
+
+        let total = 0;
+        let quantityTotal = 0;
+
+
+        if (cart.length === 0) {
+
+            emptyCart.classList.remove("hidden");
+
+        } else {
+
+            emptyCart.classList.add("hidden");
+
+        }
+
+
+        cart.forEach(function (item, index) {
+
+            total += item.price * item.quantity;
+
+            quantityTotal += item.quantity;
+
+
+            const cartItem = document.createElement("div");
+
+            cartItem.classList.add("cart-item");
+
+
+            cartItem.innerHTML = `
+
+                <div class="cart-item-image">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                    >
+
+                </div>
+
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <div class="cart-item-price">
+                        Rs. ${formatPrice(item.price)}
+                    </div>
+
+                    <div style="
+                        color:#888;
+                        font-size:11px;
+                        margin-top:5px;
+                    ">
+                        Quantity: ${item.quantity}
+                    </div>
+
+                    <button
+                        class="remove-item"
+                        data-index="${index}"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+            `;
+
+
+            cartItemsContainer.appendChild(cartItem);
+
+        });
+
+
+        totalPrice.textContent =
+            "Rs. " + formatPrice(total);
+
+
+        cartCount.textContent = quantityTotal;
+
+
+        /* Remove buttons */
+
+        const removeButtons =
+            document.querySelectorAll(".remove-item");
+
+
+        removeButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const index =
+                    Number(button.dataset.index);
+
+                cart.splice(index, 1);
+
+                updateCart();
+
+            });
+
+        });
+
+    }
+
+
+    /* =================================================
+       PRICE FORMAT
+    ================================================= */
+
+    function formatPrice(price) {
+
+        return price.toLocaleString("en-PK");
+
+    }
+
+
+    /* =================================================
+       CHECKOUT
+    ================================================= */
+
+    if (checkoutBtn) {
+
+        checkoutBtn.addEventListener("click", function () {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty!");
+
+                return;
+
+            }
+
+
+            let message =
+                "Order Summary:\n\n";
+
+
+            cart.forEach(function (item) {
+
+                message +=
+                    item.name +
+                    " x " +
+                    item.quantity +
+                    " = Rs. " +
+                    formatPrice(
+                        item.price * item.quantity
+                    ) +
+                    "\n";
+
+            });
+
+
+            let total = cart.reduce(
+                function (sum, item) {
+
+                    return sum +
+                        item.price * item.quantity;
+
+                },
+                0
+            );
+
+
+            message +=
+                "\nTotal: Rs. " +
+                formatPrice(total);
+
+
+            alert(message);
+
+        });
+
+    }
+
+
+    /* =================================================
        ESC KEY
-    ========================================= */
+    ================================================= */
 
     document.addEventListener("keydown", function (event) {
 
         if (event.key === "Escape") {
 
-            closeSidebar();
+            closeCartSidebar();
 
-            if (desktopDropdown) {
-                desktopDropdown.classList.remove("open");
-            }
+            mobileMenu.classList.remove("active");
+
+            dropdown.classList.remove("active");
 
         }
 
     });
 
 
-    /* =========================================
-       CLOSE SIDEBAR AFTER LINK CLICK
-    ========================================= */
-
-    const sidebarLinks =
-        document.querySelectorAll(".sidebar-nav a");
-
-    sidebarLinks.forEach(function (link) {
-
-        link.addEventListener("click", function () {
-
-            closeSidebar();
-
-        });
-
-    });
-
-
-    /* =========================================
-       RESPONSIVE SIDEBAR RESET
-    ========================================= */
+    /* =================================================
+       WINDOW RESIZE
+    ================================================= */
 
     window.addEventListener("resize", function () {
 
-        if (window.innerWidth > 992) {
+        if (window.innerWidth > 768) {
 
-            closeSidebar();
+            mobileMenu.classList.remove("active");
+            dropdown.classList.remove("active");
 
         }
 
     });
 
+
+    /* =================================================
+       INITIAL CART
+    ================================================= */
+
+    updateCart();
+
 });
+

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product | Alberto Watches</title>
+
+    <link rel="stylesheet" href="assets/css/product.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+    <div class="top-bar">
+        <p>Welcome to Alberto Watches</p>
+
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            +92 300 1234567
+        </p>
+    </div>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <i class="fa-regular fa-clock"></i>
+            Alberto
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="citizen.html">Citizen</a></li>
+            <li><a href="vintage.html">Vintage</a></li>
+            <li><a href="product.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="searchBtn"></i>
+
+            <div class="cart-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cartCount">0</span>
+            </div>
+
+            <i class="fa-solid fa-bars" id="menuBtn"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= SEARCH BOX ================= -->
+<div class="search-box" id="searchBox">
+    <input type="text" id="searchInput" placeholder="Search watches...">
+    <button onclick="searchProduct()">
+        <i class="fa-solid fa-search"></i>
+    </button>
+</div>
+
+
+<!-- ================= PRODUCT SECTION ================= -->
+<main>
+
+<section class="product-section">
+
+    <!-- LEFT SIDE -->
+    <div class="product-gallery">
+
+        <div class="thumbnail-list">
+
+            <img src="assets/img/watch1.jpg"
+                 class="thumbnail active-thumb"
+                 onclick="changeImage(this)">
+
+            <img src="assets/img/watch2.jpg"
+                 class="thumbnail"
+                 onclick="changeImage(this)">
+
+            <img src="assets/img/watch3.jpg"
+                 class="thumbnail"
+                 onclick="changeImage(this)">
+
+            <img src="assets/img/watch4.jpg"
+                 class="thumbnail"
+                 onclick="changeImage(this)">
+
+        </div>
+
+        <div class="main-image-box">
+
+            <span class="sale-badge">NEW</span>
+
+            <img id="mainProductImage"
+                 src="assets/img/watch1.jpg"
+                 alt="Premium Alberto Watch">
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+    <div class="product-details">
+
+        <p class="category">LUXURY COLLECTION</p>
+
+        <h1>Alberto Classic Premium Watch</h1>
+
+        <div class="rating">
+
+            <span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+
+            <span class="review-text">
+                4.8 (125 Reviews)
+            </span>
+
+        </div>
+
+
+        <div class="price-box">
+            <span class="old-price">Rs. 35,000</span>
+            <span class="price">Rs. 28,999</span>
+        </div>
+
+
+        <p class="description">
+            Discover timeless elegance with the Alberto Classic Premium Watch.
+            Designed with a sophisticated dial, premium stainless-steel case
+            and comfortable strap. Perfect for both formal and casual occasions.
+        </p>
+
+
+        <!-- FEATURES -->
+        <div class="features">
+
+            <div class="feature">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <strong>2 Years Warranty</strong>
+                    <small>Official warranty</small>
+                </div>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-truck"></i>
+                <div>
+                    <strong>Free Delivery</strong>
+                    <small>Across Pakistan</small>
+                </div>
+            </div>
+
+            <div class="feature">
+                <i class="fa-solid fa-rotate"></i>
+                <div>
+                    <strong>Easy Returns</strong>
+                    <small>7 days return policy</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- STRAP COLOR -->
+        <div class="option-group">
+
+            <h3>Strap Color</h3>
+
+            <div class="color-options">
+
+                <button class="color black active-color"
+                        onclick="selectColor(this, 'Black')">
+                </button>
+
+                <button class="color brown"
+                        onclick="selectColor(this, 'Brown')">
+                </button>
+
+                <button class="color silver"
+                        onclick="selectColor(this, 'Silver')">
+                </button>
+
+            </div>
+
+            <p>
+                Selected:
+                <strong id="selectedColor">Black</strong>
+            </p>
+
+        </div>
+
+
+        <!-- QUANTITY -->
+        <div class="quantity-section">
+
+            <h3>Quantity</h3>
+
+            <div class="quantity">
+
+                <button onclick="decreaseQuantity()">−</button>
+
+                <span id="quantity">1</span>
+
+                <button onclick="increaseQuantity()">+</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+        <div class="product-buttons">
+
+            <button class="add-cart" onclick="addToCart()">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Add to Cart
+            </button>
+
+            <button class="buy-now" onclick="buyNow()">
+                Buy Now
+            </button>
+
+        </div>
+
+
+        <div class="stock">
+            <i class="fa-solid fa-circle"></i>
+            In Stock — Ready to Ship
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DESCRIPTION TABS ================= -->
+<section class="product-info">
+
+    <div class="tabs">
+
+        <button class="tab active-tab"
+                onclick="openTab('descriptionTab', this)">
+            Description
+        </button>
+
+        <button class="tab"
+                onclick="openTab('detailsTab', this)">
+            Details
+        </button>
+
+        <button class="tab"
+                onclick="openTab('shippingTab', this)">
+            Shipping
+        </button>
+
+    </div>
+
+
+    <div id="descriptionTab" class="tab-content active-content">
+
+        <h2>Product Description</h2>
+
+        <p>
+            The Alberto Classic Premium Watch combines classic design with
+            modern craftsmanship. Its elegant appearance makes it suitable
+            for everyday wear, business meetings and special occasions.
+        </p>
+
+    </div>
+
+
+    <div id="detailsTab" class="tab-content">
+
+        <h2>Product Details</h2>
+
+        <ul>
+            <li>Brand: Alberto</li>
+            <li>Movement: Quartz</li>
+            <li>Case Material: Stainless Steel</li>
+            <li>Strap: Premium Leather</li>
+            <li>Water Resistance: 50M</li>
+            <li>Warranty: 2 Years</li>
+        </ul>
+
+    </div>
+
+
+    <div id="shippingTab" class="tab-content">
+
+        <h2>Shipping Information</h2>
+
+        <p>
+            Free delivery is available across Pakistan.
+            Orders are normally delivered within 3–5 working days.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RELATED PRODUCTS ================= -->
+<section class="related-products">
+
+    <div class="section-title">
+
+        <p>OUR COLLECTION</p>
+        <h2>You May Also Like</h2>
+
+    </div>
+
+
+    <div class="product-grid">
+
+        <div class="card">
+
+            <div class="card-image">
+                <img src="assets/img/watch2.jpg" alt="Classic Watch">
+
+                <button onclick="quickAdd('Classic Silver Watch')">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </button>
+            </div>
+
+            <div class="card-content">
+                <h3>Classic Silver Watch</h3>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>Rs. 24,999</p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">
+
+                <img src="assets/img/watch3.jpg" alt="Luxury Watch">
+
+                <button onclick="quickAdd('Alberto Luxury Watch')">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </button>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>Alberto Luxury Watch</h3>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>Rs. 32,999</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">
+
+                <img src="assets/img/watch4.jpg" alt="Vintage Watch">
+
+                <button onclick="quickAdd('Vintage Alberto Watch')">
+                    <i class="fa-solid fa-cart-plus"></i>
+                </button>
+
+            </div>
+
+            <div class="card-content">
+
+                <h3>Vintage Alberto Watch</h3>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>Rs. 29,999</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h2>Alberto</h2>
+            <p>
+                Premium watches designed for people
+                who appreciate timeless style.
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="product.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h3>Follow Us</h3>
+
+            <div class="social-icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-tiktok"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Alberto Watches. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<script src="assets/js/product.js"></script>
+
+</body>
+</html>

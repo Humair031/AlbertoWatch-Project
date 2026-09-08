@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Alberto Watches | Premium Watches</title>
-
-    <link rel="stylesheet" href="assets/css/style.css">
+<!-- <link rel="stylesheet" href="assets/css/alberto.css"> -->
+<link rel="stylesheet" href="assets/css/a.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/boots.css">
-    <link rel="stylesheet" href="assets/css/a.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="shortcut icon"
         href="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png"
@@ -19,7 +19,8 @@
 <body>
 
 <!-- ================= TOP HEADER ================= -->
-<div class="header-sec">
+
+<header class="header-sec">
 
     <div class="section-1">
         <span>Welcome to Alberto Watches</span>
@@ -30,7 +31,7 @@
             100% AUTHENTIC WATCHES |
             OVER THOUSANDS OF SATISFIED CUSTOMERS |
             EXCELLENT AFTER-SALE SERVICE |
-            FOR COMPLAINT &amp; SUGGESTIONS
+            FOR COMPLAINT & SUGGESTIONS
         </marquee>
     </div>
 
@@ -48,870 +49,938 @@
         </a>
     </div>
 
-</div>
-
-
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-
-    <!-- Logo -->
-    <div class="nav-logo">
-        <a href="index.html">
-            <img src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76.png"
-                 alt="Alberto Watches Logo">
-        </a>
-    </div>
-
-
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
-
-        <a href="index.html">HOME</a>
-
-        <div class="nav-dropdown">
-
-            <button type="button"
-                    class="dropdown-btn"
-                    id="desktopProductsBtn">
-                PRODUCTS
-                <span>⌄</span>
-            </button>
-
-            <div class="dropdown-menu" id="desktopProductsMenu">
-                <a href="rolex.html">Rolex Watches</a>
-                <a href="vintage.html">Vintage Watches</a>
-                <a href="citizen.html">Citizen Watches</a>
-                <a href="smart.html">Smart Watches</a>
-                <a href="michael-kors.html">Michael Kors</a>
-                <a href="bulova.html">Bulova Watches</a>
-            </div>
-
-        </div>
-
-        <a href="about.html">ABOUT</a>
-        <a href="repair.html">REPAIRS &amp; SERVICING</a>
-        <a href="appraisal.html">APPRAISAL</a>
-        <a href="store.html">STORE</a>
-        <a href="contact.html">CONTACT</a>
-        <a href="search.html">SEARCH</a>
-
-    </nav>
-
-
-    <!-- Right Icons -->
-    <div class="nav-icons">
-
-        <a href="search.html" aria-label="Search">
-            <img src="assets/icon/sistrix-brands-solid-full.svg" alt="Search">
-        </a>
-
-        <a href="login.html" aria-label="Login">
-            <img src="assets/icon/user-solid-full.svg" alt="User">
-        </a>
-
-        <a href="cart.html" aria-label="Shopping Cart">
-            <img src="assets/icon/bag-shopping-solid-full.svg" alt="Cart">
-        </a>
-
-        <!-- Mobile Menu Button -->
-        <button type="button"
-                class="menu-btn"
-                id="menuBtn"
-                aria-label="Open menu"
-                aria-expanded="false">
-            <img src="assets/icon/bars-solid-full.svg" alt="Menu">
-        </button>
-
-    </div>
-
 </header>
 
 
-<!-- ================= OVERLAY ================= -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<!-- ================= MAIN NAVBAR ================= -->
 
+<nav class="headercol-sec">
 
-<!-- ================= MOBILE SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
-
-    <div class="sidebar-header">
+    <div class="sectioncol-1">
         <a href="index.html">
-            <img src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76.png"
-                 alt="Alberto Watches Logo">
+            <img
+                src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76.png"
+                alt="Alberto Watches Logo">
         </a>
-        <button type="button"class="close-btn"id="closeBtn"aria-label="Close menu">
-            &times;
-        </button>
     </div>
 
 
-    <nav class="sidebar-nav">
+    <div class="sectioncol-2">
 
-        <a href="index.html">HOME</a>
+        <div class="header-text" id="mainMenu">
 
-        <!-- Products -->
-        <div class="sidebar-dropdown" id="sidebarDropdown">
+            <a href="index.html">HOME</a>
 
-            <button type="button"
-                    class="sidebar-products"
-                    id="sidebarProducts">
+            <div class="dropdown">
 
-                <span>PRODUCTS</span>
-                <span class="arrow">⌄</span>
+                <a href="#" class="dropdown-toggle">
+                    PRODUCTS 
+                </a>
 
-            </button>
-
-
-            <div class="sidebar-submenu">
-
-                <a href="rolex.html">Rolex Watches</a>
-                <a href="vintage.html">Vintage Watches</a>
-                <a href="citizen.html">Citizen Watches</a>
-                <a href="smart.html">Smart Watches</a>
-                <a href="michael-kors.html">Michael Kors</a>
-                <a href="bulova.html">Bulova Watches</a>
+            <ul class="dropdown-menu">
+            <li><a href="rolex.html">Rolex watches</a></li>
+            <li><a href="vintage.html">Vintage Watches</a></li>
+            <li><a href="citizen.html">Citizen Watches</a></li>
+            <li><a href="smart.html">Smart Watches</a></li>
+            <li><a href="smart.html">Bulavo Watches</a></li>
+            <li><a href="smart.html">Michael Kors Watches</a></li>
+        </ul>
 
             </div>
 
+            <a href="about.html">ABOUT</a>
+
+            <a href="repair.html">REPAIRS & SERVICING</a>
+
+            <a href="apprasial.html">APPRAISAL</a>
+
+            <a href="store.html">STORE</a>
+
+            <a href="contact.html">CONTACT</a>
+
+            <a href="search.html">SEARCH</a>
+
         </div>
 
-        <a href="about.html">ABOUT</a>
-        <a href="repair.html">REPAIRS &amp; SERVICING</a>
-        <a href="appraisal.html">APPRAISAL</a>
-        <a href="store.html">STORE</a>
-        <a href="contact.html">CONTACT</a>
-        <a href="search.html">SEARCH</a>
-
-    </nav>
-
-</aside>
+    </div>
 
 
-<!-- ================= MAIN ================= -->
+    <div class="sectioncol-3">
+
+        <a href="search.html">
+            <img src="assets/icon/sistrix-brands-solid-full.svg"
+                 alt="Search">
+        </a>
+
+        <a href="#">
+            <img src="assets/icon/user-solid-full.svg"
+                 alt="User">
+        </a>
+
+        <button class="cart-icon-btn" aria-label="Open Cart">
+            <img src="assets/icon/bag-shopping-solid-full.svg"
+                 alt="Cart">
+
+            <span class="cart-count">0</span>
+        </button>
+
+        <button class="menu-btn" aria-label="Open Menu">
+            <img src="assets/icon/bars-solid-full.svg"
+                 class="menu"
+                 alt="Menu">
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO SLIDER ================= -->
+
 <main class="main-content">
 
+<section class="hero-slider">
 
-    <!-- ================= HERO SLIDER ================= -->
-    <section class="hero-slider">
+    <div id="carouselExampleSlidesOnly"
+         class="carousel slide"
+         data-bs-ride="carousel">
 
-        <div id="carouselExampleSlidesOnly"
-             class="carousel slide"
-             data-bs-ride="carousel">
+        <div class="carousel-inner">
 
-            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img
+                    src="assets/banners/ChatGPT Image Aug 30, 2026, 05_19_25 PM.png"
+                    class="d-block w-100"
+                    alt="Alberto Watches">
+            </div>
 
-                <div class="carousel-item active">
-                    <img src="assets/banners/ChatGPT Image Aug 30, 2026, 05_19_25 PM.png"
-                         alt="Alberto Watches Collection">
-                </div>
+            <div class="carousel-item">
+                <img
+                    src="assets/banners/ChatGPT Image Aug 30, 2026, 05_27_35 PM.png"
+                    class="d-block w-100"
+                    alt="Premium Watches">
+            </div>
 
-                <div class="carousel-item">
-                    <img src="assets/banners/ChatGPT Image Aug 30, 2026, 05_27_35 PM.png"
-                         alt="Premium Watches">
-                </div>
+            <div class="carousel-item">
+                <img
+                    src="assets/banners/ChatGPT Image Aug 30, 2026, 05_30_58 PM.png"
+                    class="d-block w-100"
+                    alt="Luxury Watches">
+            </div>
 
-                <div class="carousel-item">
-                    <img src="assets/banners/ChatGPT Image Aug 30, 2026, 05_30_58 PM.png"
-                         alt="Luxury Watches">
-                </div>
+            <div class="carousel-item">
+                <img
+                    src="assets/banners/ChatGPT Image Aug 30, 2026, 05_33_18 PM.png"
+                    class="d-block w-100"
+                    alt="Watch Collection">
+            </div>
 
-                <div class="carousel-item">
-                    <img src="assets/banners/ChatGPT Image Aug 30, 2026, 05_33_18 PM.png"
-                         alt="Watch Collection">
-                </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories-section">
+
+    <h1 class="cat-h1">EXPLORE THE COLLECTIONS</h1>
+
+    <div class="categories">
+
+        <a href="rolex.html" class="category-card">
+            <div class="categ-box1">
+                <img src="assets/img/Gemini_Generated_Image_m2metem2metem2me.jpg"
+                     alt="Rolex Watches">
+            </div>
+            <span>Rolex Watches</span>
+        </a>
+
+
+        <a href="citizen.html" class="category-card">
+            <div class="categ-box1">
+                <img src="assets/img/Gemini_Generated_Image_n5e3dn5e3dn5e3dn.jpg"
+                     alt="Citizen Watches">
+            </div>
+            <span>Citizen Watches</span>
+        </a>
+
+
+        <a href="smart.html" class="category-card">
+            <div class="categ-box1">
+                <img src="assets/img/Gemini_Generated_Image_lj6805lj6805lj68.jpg"
+                     alt="Smart Watches">
+            </div>
+            <span>Smart Watches</span>
+        </a>
+
+
+        <a href="vintage.html" class="category-card">
+            <div class="categ-box1">
+                <img src="assets/img/Gemini_Generated_Image_5tkgd5tkgd5tkgd5.jpg"
+                     alt="Vintage Watches">
+            </div>
+            <span>Vintage Watches</span>
+        </a>
+
+
+        <a href="repair.html" class="category-card">
+            <div class="categ-box1">
+                <img src="assets/img/Gemini_Generated_Image_7xixb57xixb57xix.jpg"
+                     alt="Watch Repair">
+            </div>
+            <span>Watch Repair</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ROLEX ================= -->
+
+<section class="watch-collection">
+
+    <h1 class="watch-title">FEATURED WATCHES</h1>
+    <p class="watch-subtitle">
+        Discover Our Premium Watch Collection
+    </p>
+
+    <h2 class="collection-heading">ROLEX WATCHES</h2>
+
+    <div class="watch-container">
+
+
+        <!-- Product 1 -->
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/rolex1.jpg"
+                     alt="Rolex Submariner">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Rolex Submariner</h2>
+
+                <p class="watch-category">
+                    Rolex Watches
+                </p>
+
+                <p class="watch-description">
+                    A luxury Rolex watch with timeless design
+                    and premium finishing.
+                </p>
+
+                <div class="watch-price">Rs. 19,999</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Rolex Submariner"
+                    data-price="19999"
+                    data-image="assets/img/rolex1.jpg">
+                    Add to Cart
+                </button>
 
             </div>
 
         </div>
 
-    </section>
 
+        <!-- Product 2 -->
 
-    <!-- ================= CATEGORIES ================= -->
-    <section class="category-section">
+        <div class="watch-box">
 
-        <h1 class="cat-h1">EXPLORE THE COLLECTIONS</h1>
+            <div class="watch-image">
+                <img src="assets/img/m126334-0002.avif"
+                     alt="Rolex Datejust 41">
+            </div>
 
-        <div class="categories">
+            <div class="watch-info">
 
-            <a href="rolex.html">
-                <div class="categ-box1">
-                    <img src="assets/img/Gemini_Generated_Image_m2metem2metem2me.jpg"
-                         alt="Rolex Watches">
-                </div>
-                <span>Rolex Watches</span>
-            </a>
+                <h2>Rolex Datejust 41</h2>
 
+                <p class="watch-category">
+                    Luxury Watches
+                </p>
 
-            <a href="citizen.html">
-                <div class="categ-box1">
-                    <img src="assets/img/Gemini_Generated_Image_n5e3dn5e3dn5e3dn.jpg"
-                         alt="Citizen Watches">
-                </div>
-                <span>Citizen Watches</span>
-            </a>
+                <p class="watch-description">
+                    Elegant Rolex Datejust with a sophisticated
+                    dial and premium bracelet.
+                </p>
 
+                <div class="watch-price">Rs. 9,999</div>
 
-            <a href="smart.html">
-                <div class="categ-box1">
-                    <img src="assets/img/Gemini_Generated_Image_lj6805lj6805lj68.jpg"
-                         alt="Smart Watches">
-                </div>
-                <span>Smart Watches</span>
-            </a>
+                <button class="watch-btn add-cart"
+                    data-name="Rolex Datejust 41"
+                    data-price="9999"
+                    data-image="assets/img/m126334-0002.avif">
+                    Add to Cart
+                </button>
 
-
-            <a href="vintage.html">
-                <div class="categ-box1">
-                    <img src="assets/img/Gemini_Generated_Image_5tkgd5tkgd5tkgd5.jpg"
-                         alt="Vintage Watches">
-                </div>
-                <span>Vintage Watches</span>
-            </a>
-
-
-            <a href="repair.html">
-                <div class="categ-box1">
-                    <img src="assets/img/Gemini_Generated_Image_7xixb57xixb57xix.jpg"
-                         alt="Watch Repair">
-                </div>
-                <span>Watch Repair</span>
-            </a>
+            </div>
 
         </div>
 
-    </section>
+
+        <!-- Product 3 -->
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img
+                    src="assets/img/181798015_m228238_0069_01_4949.webp"
+                    alt="Rolex Day-Date 40">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Rolex Day-Date 40</h2>
+
+                <p class="watch-category">
+                    Rolex Watches
+                </p>
+
+                <p class="watch-description">
+                    Premium Rolex Day-Date with a stylish
+                    design for everyday luxury.
+                </p>
+
+                <div class="watch-price">Rs. 14,999</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Rolex Day-Date 40"
+                    data-price="14999"
+                    data-image="assets/img/181798015_m228238_0069_01_4949.webp">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="rolex.html" class="view-btn">
+        VIEW COLLECTION
+        <span>→</span>
+    </a>
+
+</section>
 
 
-    <!-- =====================================================
-         ROLEX COLLECTION
-    ====================================================== -->
-    <section class="watch-collection">
+<!-- ================= CITIZEN ================= -->
 
-        <h1 class="watch-title">FEATURED WATCHES</h1>
-        <p class="watch-subtitle">
-            Discover Our Premium Watch Collection
-        </p>
+<section class="watch-collection">
 
-        <h2 class="collection-heading">ROLEX WATCHES</h2>
+    <h1 class="watch-title">CITIZEN WATCHES</h1>
 
+    <p class="watch-subtitle">
+        Discover Our Premium Citizen Collection
+    </p>
 
-        <div class="watch-container">
+    <div class="watch-container">
 
 
-            <!-- Watch 1 -->
-            <article class="watch-box">
+        <div class="watch-box">
 
-                <div class="watch-image">
-                    <img src="assets/img/rolex1.jpg"
-                         alt="Rolex Submariner">
-                </div>
+            <div class="watch-image">
+                <img src="assets/img/citizen-chronograph.avif"
+                     alt="Citizen Chronograph">
+            </div>
 
-                <div class="watch-info">
+            <div class="watch-info">
 
-                    <h2>Rolex Submariner</h2>
+                <h2>Citizen Chronograph Blue Dial</h2>
 
-                    <p class="watch-category">
-                        Rolex Watches
-                    </p>
+                <p class="watch-category">
+                    Citizen Watches
+                </p>
 
-                    <p class="watch-description">
-                        A luxury Rolex watch with timeless design
-                        and premium finishing.
-                    </p>
+                <p class="watch-description">
+                    A premium Citizen watch with timeless
+                    design and elegant finishing.
+                </p>
 
-                    <div class="watch-price">
-                        Rs. 19,999
-                    </div>
+                <div class="watch-price">Rs. 8,000</div>
 
-                    <a href="cart.html" class="watch-btn">
-                        Buy Now
-                    </a>
+                <button class="watch-btn add-cart"
+                    data-name="Citizen Chronograph Blue Dial"
+                    data-price="8000"
+                    data-image="assets/img/citizen-chronograph.avif">
+                    Add to Cart
+                </button>
 
-                </div>
-
-            </article>
-
-
-            <!-- Watch 2 -->
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/m126334-0002.avif"
-                         alt="Rolex Datejust 41">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Rolex Datejust 41</h2>
-
-                    <p class="watch-category">
-                        Luxury Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Elegant Rolex Datejust with a sophisticated
-                        dial and premium bracelet.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 9,999
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">
-                        Buy Now
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- Watch 3 -->
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/181798015_m228238_0069_01_4949.webp"
-                         alt="Rolex Day-Date 40">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Rolex Day-Date 40</h2>
-
-                    <p class="watch-category">
-                        Rolex Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Classic Rolex design with an elegant
-                        premium finish.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 14,999
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">
-                        Buy Now
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- Watch 4 -->
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/m126506-0001-14.webp"
-                         alt="Rolex Cosmograph Daytona">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Rolex Cosmograph Daytona</h2>
-
-                    <p class="watch-category">
-                        Rolex Watches
-                    </p>
-
-                    <p class="watch-description">
-                        A classic luxury chronograph-inspired
-                        watch made for timeless elegance.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 12,999
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">
-                        Buy Now
-                    </a>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
 
-        <a href="rolex.html" class="view-link">
-            <button type="button" class="butn">
-                VIEW
-                <span>
-                    <img src="assets/icon/arrow_forward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-                         alt="">
-                </span>
-            </button>
-        </a>
+        <div class="watch-box">
 
-    </section>
+            <div class="watch-image">
+                <img src="assets/img/NJ0151-88M.jpg"
+                     alt="Citizen Tsuyosa Automatic">
+            </div>
 
+            <div class="watch-info">
 
-    <!-- =====================================================
-         CITIZEN COLLECTION
-    ====================================================== -->
-    <section class="watch-collection">
+                <h2>Citizen Tsuyosa Automatic</h2>
 
-        <h1 class="watch-title">CITIZEN WATCHES</h1>
+                <p class="watch-category">
+                    Citizen Watches
+                </p>
 
-        <p class="watch-subtitle">
-            Discover Our Premium Citizen Collection
-        </p>
+                <p class="watch-description">
+                    Elegant Citizen Tsuyosa Automatic with
+                    premium bracelet and sophisticated dial.
+                </p>
 
+                <div class="watch-price">Rs. 10,000</div>
 
-        <div class="watch-container">
+                <button class="watch-btn add-cart"
+                    data-name="Citizen Tsuyosa Automatic"
+                    data-price="10000"
+                    data-image="assets/img/NJ0151-88M.jpg">
+                    Add to Cart
+                </button>
 
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/citizen-chronograph.avif"
-                         alt="Citizen Chronograph Blue Dial">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Citizen Chronograph Blue Dial</h2>
-
-                    <p class="watch-category">
-                        Citizen Watches
-                    </p>
-
-                    <p class="watch-description">
-                        A premium Citizen watch with timeless
-                        design and elegant finishing.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 8,000
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/NJ0151-88M.jpg"
-                         alt="Citizen Tsuyosa Automatic">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Citizen Tsuyosa Automatic</h2>
-
-                    <p class="watch-category">
-                        Citizen Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Elegant Citizen Tsuyosa Automatic with
-                        sophisticated dial and premium bracelet.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 10,000
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/69783_unnamed-file-1.avif"
-                         alt="Citizen Eco Drive">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Citizen Eco-Drive Black Dial</h2>
-
-                    <p class="watch-category">
-                        Citizen Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Modern Citizen watch with stylish design
-                        for everyday use.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 12,000
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/images (5).jpg"
-                         alt="Citizen Quartz Standard">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Citizen Quartz Standard</h2>
-
-                    <p class="watch-category">
-                        Citizen Watches
-                    </p>
-
-                    <p class="watch-description">
-                        A classic Citizen quartz watch designed
-                        for timeless everyday elegance.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 7,999
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
 
-        <a href="citizen.html" class="view-link">
-            <button type="button" class="butn">
-                VIEW
-                <span>
-                    <img src="assets/icon/arrow_forward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-                         alt="">
-                </span>
-            </button>
-        </a>
+        <div class="watch-box">
 
-    </section>
+            <div class="watch-image">
+                <img src="assets/img/69783_unnamed-file-1.avif"
+                     alt="Citizen Eco Drive">
+            </div>
 
+            <div class="watch-info">
 
-    <!-- =====================================================
-         VINTAGE COLLECTION
-    ====================================================== -->
-    <section class="watch-collection">
+                <h2>Citizen Eco-Drive Black Dial</h2>
 
-        <h1 class="watch-title">VINTAGE WATCHES</h1>
+                <p class="watch-category">
+                    Citizen Watches
+                </p>
 
-        <p class="watch-subtitle">
-            Discover Our Premium Vintage Collection
-        </p>
+                <p class="watch-description">
+                    Modern Citizen watch with stylish design
+                    and premium finishing.
+                </p>
 
+                <div class="watch-price">Rs. 12,000</div>
 
-        <div class="watch-container">
+                <button class="watch-btn add-cart"
+                    data-name="Citizen Eco-Drive Black Dial"
+                    data-price="12000"
+                    data-image="assets/img/69783_unnamed-file-1.avif">
+                    Add to Cart
+                </button>
 
-            <article class="watch-box">
+            </div>
 
-                <div class="watch-image">
-                    <img src="assets/img/1.avif"
-                         alt="Casio Vintage Ladies Digital Watch">
-                </div>
+        </div>
 
-                <div class="watch-info">
+    </div>
 
-                    <h2>Casio Vintage Ladies Digital Watch</h2>
+    <a href="citizen.html" class="view-btn">
+        VIEW COLLECTION <span>→</span>
+    </a>
 
-                    <p class="watch-category">
-                        Vintage Watches
-                    </p>
-
-                    <p class="watch-description">
-                        A stylish vintage watch with timeless
-                        design and premium finishing.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 19,400
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
+</section>
 
 
-            <article class="watch-box">
+<!-- ================= VINTAGE ================= -->
 
-                <div class="watch-image">
-                    <img src="assets/img/2.avif"
-                         alt="Casio Vintage Unisex Digital Watch">
-                </div>
+<section class="watch-collection">
 
-                <div class="watch-info">
+    <h1 class="watch-title">VINTAGE WATCHES</h1>
 
-                    <h2>Casio Vintage Unisex Digital Watch</h2>
+    <p class="watch-subtitle">
+        Classic watches with timeless style
+    </p>
 
-                    <p class="watch-category">
-                        Vintage Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Elegant vintage design with a
-                        sophisticated dial and bracelet.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 18,700
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
+    <div class="watch-container">
 
 
-            <article class="watch-box">
+        <div class="watch-box">
 
-                <div class="watch-image">
-                    <img src="assets/img/3.avif"
-                         alt="Casio Vintage Analog Digital Watch">
-                </div>
+            <div class="watch-image">
+                <img src="assets/img/1.avif"
+                     alt="Casio Vintage Ladies">
+            </div>
 
-                <div class="watch-info">
+            <div class="watch-info">
 
-                    <h2>Casio Vintage Analog-Digital Watch</h2>
+                <h2>Casio Vintage Ladies Digital Watch</h2>
 
-                    <p class="watch-category">
-                        Vintage Watches
-                    </p>
+                <p class="watch-category">
+                    Vintage Watches
+                </p>
 
-                    <p class="watch-description">
-                        Modern vintage styling with a practical
-                        everyday design.
-                    </p>
+                <p class="watch-description">
+                    Classic vintage watch with a stylish
+                    digital display.
+                </p>
 
-                    <div class="watch-price">
-                        Rs. 15,000
-                    </div>
+                <div class="watch-price">Rs. 19,400</div>
 
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
+                <button class="watch-btn add-cart"
+                    data-name="Casio Vintage Ladies Digital Watch"
+                    data-price="19400"
+                    data-image="assets/img/1.avif">
+                    Add to Cart
+                </button>
 
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/download.jpg"
-                         alt="Paul Smith Precision Chronograph">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Paul Smith Precision Chronograph</h2>
-
-                    <p class="watch-category">
-                        Vintage Watches
-                    </p>
-
-                    <p class="watch-description">
-                        A classic chronograph-inspired watch
-                        designed for timeless elegance.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 11,999
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
 
-        <a href="vintage.html" class="view-link">
-            <button type="button" class="butn">
-                VIEW
-                <span>
-                    <img src="assets/icon/arrow_forward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-                         alt="">
-                </span>
-            </button>
-        </a>
+        <div class="watch-box">
 
-    </section>
+            <div class="watch-image">
+                <img src="assets/img/2.avif"
+                     alt="Casio Vintage Unisex">
+            </div>
 
+            <div class="watch-info">
 
-    <!-- =====================================================
-         SMART WATCH COLLECTION
-    ====================================================== -->
-    <section class="watch-collection">
+                <h2>Casio Vintage Unisex Digital Watch</h2>
 
-        <h1 class="watch-title">SMART WATCHES</h1>
+                <p class="watch-category">
+                    Vintage Watches
+                </p>
 
-        <p class="watch-subtitle">
-            Discover Our Premium Smart Watch Collection
-        </p>
+                <p class="watch-description">
+                    Elegant vintage design with a
+                    premium classic appearance.
+                </p>
 
+                <div class="watch-price">Rs. 18,700</div>
 
-        <div class="watch-container">
+                <button class="watch-btn add-cart"
+                    data-name="Casio Vintage Unisex Digital Watch"
+                    data-price="18700"
+                    data-image="assets/img/2.avif">
+                    Add to Cart
+                </button>
 
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/images (6).jpg"
-                         alt="Samsung Galaxy Watch 7">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Samsung Galaxy Watch 7</h2>
-
-                    <p class="watch-category">
-                        Smart Watches
-                    </p>
-
-                    <p class="watch-description">
-                        A modern smartwatch with stylish design
-                        for everyday use.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 42,500
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/images (7).jpg"
-                         alt="Samsung Galaxy Watch 8">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Samsung Galaxy Watch 8</h2>
-
-                    <p class="watch-category">
-                        Smart Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Elegant smartwatch with sophisticated
-                        design and premium bracelet.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 18,700
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/images (8).jpg"
-                         alt="Samsung Galaxy Watch FE">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Samsung Galaxy Watch FE</h2>
-
-                    <p class="watch-category">
-                        Smart Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Modern smartwatch with a stylish design
-                        for everyday use.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 30,999
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
-
-
-            <article class="watch-box">
-
-                <div class="watch-image">
-                    <img src="assets/img/images (9).jpg"
-                         alt="Samsung Galaxy Fit 3">
-                </div>
-
-                <div class="watch-info">
-
-                    <h2>Samsung Galaxy Fit 3</h2>
-
-                    <p class="watch-category">
-                        Smart Watches
-                    </p>
-
-                    <p class="watch-description">
-                        Lightweight smart fitness watch with
-                        a modern everyday design.
-                    </p>
-
-                    <div class="watch-price">
-                        Rs. 13,500
-                    </div>
-
-                    <a href="cart.html" class="watch-btn">Buy Now</a>
-
-                </div>
-
-            </article>
+            </div>
 
         </div>
 
 
-        <a href="smart.html" class="view-link">
-            <button type="button" class="butn">
-                VIEW
-                <span>
-                    <img src="assets/icon/arrow_forward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-                         alt="">
-                </span>
-            </button>
-        </a>
+        <div class="watch-box">
 
-    </section>
+            <div class="watch-image">
+                <img src="assets/img/3.avif"
+                     alt="Casio Vintage Analog Digital">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Casio Vintage Analog-Digital Watch</h2>
+
+                <p class="watch-category">
+                    Vintage Watches
+                </p>
+
+                <p class="watch-description">
+                    Modern vintage watch with a stylish
+                    everyday design.
+                </p>
+
+                <div class="watch-price">Rs. 15,000</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Casio Vintage Analog-Digital Watch"
+                    data-price="15000"
+                    data-image="assets/img/3.avif">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="vintage.html" class="view-btn">
+        VIEW COLLECTION <span>→</span>
+    </a>
+
+</section>
+
+
+<!-- ================= SMART WATCHES ================= -->
+
+<section class="watch-collection">
+
+    <h1 class="watch-title">SMART WATCHES</h1>
+
+    <p class="watch-subtitle">
+        Modern technology meets stylish design
+    </p>
+
+    <div class="watch-container">
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/images (6).jpg"
+                     alt="Samsung Galaxy Watch 7">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Samsung Galaxy Watch 7</h2>
+
+                <p class="watch-category">
+                    Smart Watches
+                </p>
+
+                <p class="watch-description">
+                    Modern smartwatch with premium design
+                    and smart features.
+                </p>
+
+                <div class="watch-price">Rs. 42,500</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Samsung Galaxy Watch 7"
+                    data-price="42500"
+                    data-image="assets/img/images (6).jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/images (7).jpg"
+                     alt="Samsung Galaxy Watch 8">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Samsung Galaxy Watch 8</h2>
+
+                <p class="watch-category">
+                    Smart Watches
+                </p>
+
+                <p class="watch-description">
+                    Elegant smartwatch with modern design
+                    and premium features.
+                </p>
+
+                <div class="watch-price">Rs. 18,700</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Samsung Galaxy Watch 8"
+                    data-price="18700"
+                    data-image="assets/img/images (7).jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/images (8).jpg"
+                     alt="Samsung Galaxy Watch FE">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Samsung Galaxy Watch FE</h2>
+
+                <p class="watch-category">
+                    Smart Watches
+                </p>
+
+                <p class="watch-description">
+                    Stylish smartwatch for everyday use.
+                </p>
+
+                <div class="watch-price">Rs. 30,999</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Samsung Galaxy Watch FE"
+                    data-price="30999"
+                    data-image="assets/img/images (8).jpg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a href="smart.html" class="view-btn">
+        VIEW COLLECTION <span>→</span>
+    </a>
+
+</section>
+
+
+<!-- ================= MICHAEL KORS ================= -->
+
+<section class="watch-collection">
+
+    <h1 class="watch-title">MICHAEL KORS WATCHES</h1>
+
+    <p class="watch-subtitle">
+        Elegant and fashionable timepieces
+    </p>
+
+    <div class="watch-container">
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/michael.jfif"
+                     alt="Michael Kors Rose Gold">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Michael Kors Rose Gold Stainless Steel</h2>
+
+                <p class="watch-category">
+                    Michael Kors Watches
+                </p>
+
+                <p class="watch-description">
+                    Rose Gold Stainless Steel Green Dial Quartz
+                    Watch for Ladies - MK7412.
+                </p>
+
+                <div class="watch-price">Rs. 40,000</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Michael Kors Rose Gold MK7412"
+                    data-price="40000"
+                    data-image="assets/img/michael.jfif">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/michael1.jfif"
+                     alt="Michael Kors Black">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Michael Kors Black Stainless Steel</h2>
+
+                <p class="watch-category">
+                    Michael Kors Watches
+                </p>
+
+                <p class="watch-description">
+                    Black Stainless Steel Black Dial Quartz
+                    Watch for Ladies - MK3221.
+                </p>
+
+                <div class="watch-price">Rs. 35,000</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Michael Kors Black MK3221"
+                    data-price="35000"
+                    data-image="assets/img/michael1.jfif">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/michael2.jfif"
+                     alt="Michael Kors Navy Blue">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Michael Kors Navy Blue Silicone Strap</h2>
+
+                <p class="watch-category">
+                    Michael Kors Watches
+                </p>
+
+                <p class="watch-description">
+                    Stylish Michael Kors watch with a
+                    comfortable silicone strap.
+                </p>
+
+                <div class="watch-price">Rs. 40,000</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Michael Kors Navy Blue"
+                    data-price="40000"
+                    data-image="assets/img/michael2.jfif">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BULOVA ================= -->
+
+<section class="watch-collection">
+
+    <h1 class="watch-title">BULOVA WATCHES</h1>
+
+    <p class="watch-subtitle">
+        Classic luxury and sophisticated design
+    </p>
+
+    <div class="watch-container">
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/Bulavo.jpeg"
+                     alt="Bulova Wilton Chronograph">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Bulova Wilton Chronograph</h2>
+
+                <p class="watch-category">
+                    Bulova Watches
+                </p>
+
+                <p class="watch-description">
+                    Stylish stainless-steel watch featuring
+                    a sleek black dial and chronograph design.
+                </p>
+
+                <div class="watch-price">Rs. 85,000</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Bulova Wilton Chronograph"
+                    data-price="85000"
+                    data-image="assets/img/Bulavo.jpeg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/bulavo2.jpeg"
+                     alt="Bulova Chronograph">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Bulova Chronograph</h2>
+
+                <p class="watch-category">
+                    Bulova Watches
+                </p>
+
+                <p class="watch-description">
+                    Premium timepiece with a deep blue dial,
+                    rose-gold-tone case and leather strap.
+                </p>
+
+                <div class="watch-price">Rs. 80,000</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Bulova Chronograph"
+                    data-price="80000"
+                    data-image="assets/img/bulavo2.jpeg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="watch-box">
+
+            <div class="watch-image">
+                <img src="assets/img/bulavo3.jpeg"
+                     alt="Bulova Classic Automatic">
+            </div>
+
+            <div class="watch-info">
+
+                <h2>Bulova Classic Automatic</h2>
+
+                <p class="watch-category">
+                    Bulova Watches
+                </p>
+
+                <p class="watch-description">
+                    Timeless two-tone watch featuring a silver
+                    dial, gold accents and Roman numerals.
+                </p>
+
+                <div class="watch-price">Rs. 84,929</div>
+
+                <button class="watch-btn add-cart"
+                    data-name="Bulova Classic Automatic"
+                    data-price="84929"
+                    data-image="assets/img/bulavo3.jpeg">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- ================= SERVICE BADGES ================= -->
+
 <section class="badge-container">
 
     <div class="badge-item">
@@ -941,7 +1010,7 @@
         <div class="badge-text">
             <h3>100% AUTHENTIC</h3>
             <p>
-                Genuine branded watches with warranty.
+                Genuine branded watches.
             </p>
         </div>
 
@@ -952,7 +1021,7 @@
 
         <div class="icon-wrapper">
             <img src="assets/icon/headphones-regular-full.svg"
-                 alt="Customer Support">
+                 alt="Support">
         </div>
 
         <div class="badge-text">
@@ -975,7 +1044,7 @@
         <div class="badge-text">
             <h3>SECURE PAYMENTS</h3>
             <p>
-                Cash on delivery &amp; secure online payments.
+                Cash on delivery & online payments.
             </p>
         </div>
 
@@ -985,20 +1054,22 @@
 
 
 <!-- ================= FOOTER ================= -->
+
 <footer>
 
     <div class="footer-sec1">
 
-        <img src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png"
-             alt="Alberto Watches">
+        <img
+            src="assets/logo/6e4dc8e0-7f0d-4b05-ae16-c629f900cd76-removebg-preview.png"
+            alt="Alberto Watches">
 
         <span class="footer-sp">
             Alberto Watches
         </span>
 
         <p class="footer-p">
-            Your home for affordable premium quality
-            watches that never go out of style.
+            Your Home of Affordable Premium Quality
+            Watches that Never Go Out of Style.
         </p>
 
     </div>
@@ -1010,23 +1081,9 @@
 
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
-        <a href="repair.html">Repairs &amp; Servicing</a>
+        <a href="repair.html">Repairs & Servicing</a>
         <a href="contact.html">Contact Us</a>
         <a href="store.html">Store</a>
-
-    </div>
-
-
-    <div class="Quick-link">
-
-        <h3>Quick Links</h3>
-
-        <a href="#">Track Your Order</a>
-        <a href="#">Watch Brands</a>
-        <a href="#">Affiliate Program</a>
-        <a href="#">Refund Policy</a>
-        <a href="#">Payment Method</a>
-        <a href="#">Store Directory</a>
 
     </div>
 
@@ -1045,9 +1102,57 @@
 </footer>
 
 
-<!-- JavaScript -->
-<script src="assets/js/appjs"></script>
+<!-- ================= CART ================= -->
+
+<div class="cart-overlay"></div>
+
+<aside class="cart-sidebar">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button class="close-cart"
+                aria-label="Close Cart">
+            &times;
+        </button>
+
+    </div>
+
+
+    <div class="cart-items">
+        <!-- JavaScript products -->
+    </div>
+
+
+    <div class="empty-cart">
+        Your cart is empty.
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong class="total-price">
+                Rs. 0
+            </strong>
+
+        </div>
+
+        <button class="checkout-btn">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
 <script src="assets/js/boots.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 </html>

@@ -1,73 +1,132 @@
-/* =====================================================
-   ALBERTO WATCHES - CONTACT PAGE JAVASCRIPT
-===================================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =================================================
+    /* =====================================
        MOBILE MENU
-    ================================================= */
+    ===================================== */
 
-    const menuButton = document.querySelector(".sectioncol-3 .menu");
-    const mobileMenu = document.querySelector(".sectioncol-2");
+    const menuBtn = document.querySelector(".sectioncol-3 .menu");
+    const navMenu = document.querySelector(".sectioncol-2");
 
-    if (menuButton && mobileMenu) {
+    if (menuBtn && navMenu) {
 
-        menuButton.addEventListener("click", function () {
+        menuBtn.addEventListener("click", function () {
 
-            mobileMenu.classList.toggle("show");
+            navMenu.classList.toggle("active");
 
-            if (mobileMenu.classList.contains("show")) {
-                menuButton.src =
-                    "assets/icon/xmark-solid-full.svg";
+            /* Change menu icon */
+
+            if (navMenu.classList.contains("active")) {
+                menuBtn.style.transform = "rotate(90deg)";
             } else {
-                menuButton.src =
-                    "assets/icon/bars-solid-full.svg";
+                menuBtn.style.transform = "rotate(0deg)";
             }
 
         });
     }
 
 
-    /* =================================================
-       PRODUCTS DROPDOWN - MOBILE
-    ================================================= */
+    /* =====================================
+       PRODUCTS DROPDOWN MOBILE
+    ===================================== */
 
     const dropdown = document.querySelector(".dropdown");
-    const dropdownLink = document.querySelector(".dropdown > a");
+    const dropdownLink = dropdown
+        ? dropdown.querySelector(":scope > a")
+        : null;
 
     if (dropdown && dropdownLink) {
 
         dropdownLink.addEventListener("click", function (event) {
 
-            event.preventDefault();
+            if (window.innerWidth <= 768) {
 
-            dropdown.classList.toggle("open");
+                event.preventDefault();
+
+                dropdown.classList.toggle("active");
+
+            }
 
         });
     }
 
 
-    /* =================================================
-       CONTACT FORM
-    ================================================= */
+    /* =====================================
+       CLOSE MOBILE MENU
+    ===================================== */
 
-    const form = document.querySelector(".card form");
+    const navLinks = document.querySelectorAll(
+        ".header-text > a:not(.dropdown > a)"
+    );
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (window.innerWidth <= 768) {
+
+                navMenu.classList.remove("active");
+
+                if (menuBtn) {
+                    menuBtn.style.transform = "rotate(0deg)";
+                }
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================
+       CONTACT FORM
+    ===================================== */
+
+    const form = document.querySelector("form");
 
     if (form) {
+
+        const nameInput = form.querySelector(
+            'input[type="text"]'
+        );
+
+        const emailInput = form.querySelector(
+            'input[type="email"]'
+        );
+
+        const messageInput = form.querySelector(
+            "textarea"
+        );
+
+        const submitBtn = form.querySelector(
+            ".submit-btn"
+        );
+
 
         form.addEventListener("submit", function (event) {
 
             event.preventDefault();
 
-            const nameInput =
-                form.querySelector('input[placeholder="Name *"]');
 
-            const emailInput =
-                form.querySelector('input[type="email"]');
+            /* Remove previous errors */
 
-            const messageInput =
-                form.querySelector("textarea");
+            document
+                .querySelectorAll(".form-error")
+                .forEach(function (error) {
+                    error.remove();
+                });
+
+
+            /* Reset borders */
+
+            [nameInput, emailInput, messageInput].forEach(
+                function (input) {
+
+                    if (input) {
+                        input.style.borderColor = "#ddd";
+                    }
+
+                }
+            );
 
 
             const name = nameInput.value.trim();
@@ -75,96 +134,224 @@ document.addEventListener("DOMContentLoaded", function () {
             const message = messageInput.value.trim();
 
 
-            /* Name validation */
+            let valid = true;
 
-            if (name === "") {
 
-                alert("Please enter your name.");
+            /* NAME */
 
-                nameInput.focus();
+            if (name.length < 2) {
 
-                return;
+                showError(
+                    nameInput,
+                    "Please enter your name."
+                );
+
+                valid = false;
             }
 
 
-            /* Email validation */
-
-            if (email === "") {
-
-                alert("Please enter your email address.");
-
-                emailInput.focus();
-
-                return;
-            }
-
+            /* EMAIL */
 
             const emailPattern =
                 /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (!emailPattern.test(email)) {
 
-                alert("Please enter a valid email address.");
+                showError(
+                    emailInput,
+                    "Please enter a valid email address."
+                );
 
-                emailInput.focus();
+                valid = false;
+            }
 
+
+            /* MESSAGE */
+
+            if (message.length < 5) {
+
+                showError(
+                    messageInput,
+                    "Please enter your message."
+                );
+
+                valid = false;
+            }
+
+
+            /* Stop if invalid */
+
+            if (!valid) {
                 return;
             }
 
 
-            /* Message validation */
+            /* =================================
+               SUBMIT BUTTON
+            ================================= */
 
-            if (message === "") {
+            const oldText = submitBtn.textContent;
 
-                alert("Please enter your message.");
+            submitBtn.disabled = true;
 
-                messageInput.focus();
-
-                return;
-            }
-
-
-            /* Success */
-
-            alert(
-                "Thank you, " +
-                name +
-                "! Your message has been submitted successfully."
-            );
+            submitBtn.textContent = "Sending...";
 
 
-            form.reset();
+            setTimeout(function () {
+
+                submitBtn.textContent =
+                    "Message Sent ✓";
+
+
+                showSuccess(
+                    form,
+                    "Thank you! Your message has been submitted successfully."
+                );
+
+
+                form.reset();
+
+
+                setTimeout(function () {
+
+                    submitBtn.textContent = oldText;
+
+                    submitBtn.disabled = false;
+
+                }, 2500);
+
+
+            }, 1000);
 
         });
-
     }
 
 
-    /* =================================================
-       CLOSE MOBILE MENU AFTER LINK CLICK
-    ================================================= */
+    /* =====================================
+       SHOW ERROR
+    ===================================== */
 
-    const menuLinks =
-        document.querySelectorAll(".header-text > a");
+    function showError(input, message) {
 
-    menuLinks.forEach(function (link) {
+        if (!input) return;
 
-        link.addEventListener("click", function () {
+        input.style.borderColor = "#d32f2f";
 
-            if (window.innerWidth <= 768) {
 
-                mobileMenu.classList.remove("show");
+        const error = document.createElement("small");
 
-                if (menuButton) {
+        error.className = "form-error";
 
-                    menuButton.src =
-                        "assets/icon/bars-solid-full.svg";
+        error.textContent = message;
 
+        error.style.display = "block";
+        error.style.color = "#d32f2f";
+        error.style.fontSize = "12px";
+        error.style.marginTop = "5px";
+
+
+        input.parentElement.appendChild(error);
+
+
+        input.addEventListener(
+            "input",
+            function () {
+
+                input.style.borderColor = "#ddd";
+
+                if (error) {
+                    error.remove();
                 }
 
+            },
+            { once: true }
+        );
+    }
+
+
+    /* =====================================
+       SUCCESS MESSAGE
+    ===================================== */
+
+    function showSuccess(form, message) {
+
+        let success =
+            form.querySelector(".success-message");
+
+
+        if (!success) {
+
+            success =
+                document.createElement("div");
+
+            success.className =
+                "success-message";
+
+            form.appendChild(success);
+        }
+
+
+        success.textContent = message;
+
+        success.style.display = "block";
+
+
+        setTimeout(function () {
+
+            success.style.display = "none";
+
+        }, 4000);
+    }
+
+
+    /* =====================================
+       NAVBAR SCROLL EFFECT
+    ===================================== */
+
+    const navbar =
+        document.querySelector(".headercol-sec");
+
+
+    window.addEventListener("scroll", function () {
+
+        if (!navbar) return;
+
+
+        if (window.scrollY > 50) {
+
+            navbar.style.boxShadow =
+                "0 5px 20px rgba(0,0,0,0.15)";
+
+        } else {
+
+            navbar.style.boxShadow =
+                "0 2px 12px rgba(0,0,0,0.08)";
+        }
+
+    });
+
+
+    /* =====================================
+       WINDOW RESIZE
+    ===================================== */
+
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 768) {
+
+            if (navMenu) {
+                navMenu.classList.remove("active");
             }
 
-        });
+            if (dropdown) {
+                dropdown.classList.remove("active");
+            }
+
+            if (menuBtn) {
+                menuBtn.style.transform = "rotate(0deg)";
+            }
+
+        }
 
     });
 
